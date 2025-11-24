@@ -439,6 +439,94 @@ document.addEventListener("DOMContentLoaded", () => {
                         data.success ? "success" : "error"
                     );
                     this.reset();
+                    fetchND();
                 });
         });
+
+    function fetchND() {
+        fetch(`/api/get-nd/${gndUid}`)
+            .then((res) => res.json())
+            .then((data) => {
+                let ndBody = "";
+                data.forEach((item, index) => {
+                    ndBody += `
+                        <tr>
+                            <td class="border px-3 py-1 text-center">
+                                <button class="px-2 py-0 mb-2 border rounded bg-gray-200 edit-btn text-blue-600 hover:underline" data-id="${
+                                    item.nd_id
+                                }">Edit</button>
+                                <button class="px-2 py-0 mb-1 border rounded bg-gray-200 delete-btn text-red-600 hover:underline ml-4" data-id="${
+                                    item.nd_id
+                                }">Delete</button>
+                            </td>
+                            <td class="px-6 py-6 border text-center">${
+                                index + 1
+                            }</td>
+                            <td class="px-6 py-6 border text-center">${
+                                item.nd_name
+                            }</td>
+                            <td class="px-6 py-6 border text-center">${
+                                item.nd_period
+                            }</td>
+                            <td class="px-6 py-6 border text-center">${
+                                item.nd_solution
+                            }</td>
+                        </tr>
+                    `;
+                });
+                document.getElementById("ndSourceTableBody").innerHTML = ndBody;
+            });
+    }
+
+    fetchND();
+
+    document
+        .getElementById("ndSourceTableBody")
+        .addEventListener("click", function (event) {
+            if (event.target.classList.contains("delete-btn")) {
+                const ndId = event.target.dataset.id;
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "Delete the Natural Disaster link?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, delete",
+                    cancelButtonText: "Cancel",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch(`/api/delete-nd/${ndId}/${gndUid}`, {
+                            method: "DELETE",
+                            headers: csrfHeaders,
+                        })
+                            .then((res) => res.json())
+                            .then((data) => {
+                                Swal.fire("Deleted!", data.message, "success");
+                                fetchND();
+                            })
+                            .catch(() =>
+                                Swal.fire(
+                                    "Error",
+                                    "Could not delete resource.",
+                                    "error"
+                                )
+                            );
+                    }
+                });
+            }
+        });
+
+    function fetchSP() {
+        fetch(`/api/get-sp/${gndUid}`)
+            .then((res) => res.json())
+            .then((data) => {
+                let spBody = "";
+                data.forEach((item, index) => {
+                    spBody += ``;
+                });
+                document.getElementById("spTableBody").innerHTML = spBody;
+            });
+    }
+
+    fetchSP();
 });

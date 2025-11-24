@@ -18,8 +18,7 @@
 
 
                         <div class="mb-6">
-                            <x-input-label for="wr_type"
-                            >වර්ගය:</x-input-label>
+                            <x-input-label for="wr_type">වර්ගය:</x-input-label>
                             <select id="wr_type" name="wr_type" class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" required>
                                 <option value="" disabled selected>ජල මුලාශ්‍ර වර්ගයක් තෝරන්න</option>
                                 <option value="ගංගාව">ගංගාව</option>
@@ -64,15 +63,13 @@
                         @csrf
 
                         <div class="mb-6">
-                            <x-input-label for="snz_name"
-                            >කලාප/ස්ථාන නම
+                            <x-input-label for="snz_name">කලාප/ස්ථාන නම
                                 :</x-input-label>
                             <x-text-input type="text" id="snz_name" name="snz_name" required />
                         </div>
 
                         <div class="mb-6">
-                            <x-input-label for="snz_importance"
-                            >ස්ථානයේ/කලාපයේ
+                            <x-input-label for="snz_importance">ස්ථානයේ/කලාපයේ
                                 වැදගත්කම
                                 :</x-input-label>
                             <x-text-input type="text" id="snz_importance" name="snz_importance" required />
@@ -167,22 +164,19 @@
                 <form id="ndSourceForm" class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
                     @csrf
                     <div class="mb-6">
-                        <x-input-label for="nd_problem"
-                        >පාරිසරික ගැටළුව:</x-input-label>
+                        <x-input-label for="nd_problem">පාරිසරික ගැටළුව:</x-input-label>
                         <select id="nd_problem" name="nd_problem" class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" required>
                             <option value="" disabled selected>ගැටළුව තෝරන්න</option>
                             <option value="වෙනත්">වෙනත්</option>
                         </select>
                     </div>
                     <div class="mb-6">
-                        <x-input-label for="nd_period"
-                        >ඇත්නම් බහුලව සිදුවන
+                        <x-input-label for="nd_period">ඇත්නම් බහුලව සිදුවන
                             කාලසීමාව:</x-input-label>
                         <x-text-input type="text" id="nd_period" name="nd_period" required />
                     </div>
                     <div class="mb-6">
-                        <x-input-label for="suggestion"
-                        >ගැටළුව සඳහා ගත යුතු පිළියම් යෝජනා :</x-input-label>
+                        <x-input-label for="suggestion">ගැටළුව සඳහා ගත යුතු පිළියම් යෝජනා :</x-input-label>
                         <x-text-input type="text" id="suggestion" name="suggestion" required />
                     </div>
 
@@ -197,6 +191,7 @@
                 <table class="shadow-md border rounded-lg w-full">
                     <thead>
                         <tr>
+                            <th class="px-4 py-2 border"></th>
                             <th class="px-4 py-2 border">ID</th>
                             <th class="px-4 py-2 border">පාරිසරික ගැටළුව</th>
                             <th class="px-4 py-2 border">බහුලව සිදුවන
@@ -215,21 +210,19 @@
 
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                 <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">5 හදිසි ආපදා අවස්ථාවකදී හඳුනාගත් ආරක්ෂිත ස්ථාන</h2>
-                <form id="emergencySourceForm" class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
+                <form id="spSourceForm" class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
                     @csrf
 
                     <div class="mb-6">
-                        <x-input-label for="safe_place_name"
-                        >ආරක්ෂිත ස්ථානයේ නම
+                        <x-input-label for="sp_name">ආරක්ෂිත ස්ථානයේ නම
                             :</x-input-label>
-                        <x-text-input type="text" id="safe_place_name" name="safe_place_name" required />
+                        <x-text-input type="text" id="sp_name" name="sp_name" required />
                     </div>
 
                     <div class="mb-6">
-                        <x-input-label for="safe_place_address"
-                        >ලිපිනය
+                        <x-input-label for="sp_address">ලිපිනය
                             :</x-input-label>
-                        <x-text-input type="text" id="safe_place_address" name="safe_place_address" required />
+                        <x-text-input type="text" id="sp_address" name="sp_address" required />
                     </div>
                     <br>
                     <x-primary-button>insert</x-primary-button>
@@ -247,7 +240,7 @@
                             <th class="px-4 py-2 border">ලිපිනය</th>
                         </tr>
                     </thead>
-                    <tbody class="text-center" id="safePlaceTableBody">
+                    <tbody class="text-center" id="spTableBody">
                     </tbody>
                 </table>
             </div>
@@ -262,22 +255,19 @@
                     @csrf
 
                     <div class="mb-6">
-                        <x-input-label for="tourist_place"
-                        > ස්ථානයේ නම
+                        <x-input-label for="tourist_place"> ස්ථානයේ නම
                             :</x-input-label>
                         <x-text-input type="text" id="tourist_place" name="tourist_place" required />
                     </div>
 
                     <div class="mb-6">
-                        <x-input-label for="attaction"
-                        >ආකර්ශනය ඇතිවීමට හේතුව/ස්ථානයේ විශේෂත්වය
+                        <x-input-label for="attaction">ආකර්ශනය ඇතිවීමට හේතුව/ස්ථානයේ විශේෂත්වය
                             :</x-input-label>
                         <x-text-input type="text" id="attaction" name="attaction" required />
                     </div>
 
                     <div class="mb-6">
-                        <x-input-label for="right"
-                        >අයිතිය
+                        <x-input-label for="right">අයිතිය
                             :</x-input-label>
                         <x-text-input type="text" id="right" name="right" required />
                     </div>

@@ -65,7 +65,9 @@ Route::middleware('auth')->group(function () {
 
     //ND Routes
     Route::get('/api/get-nd-list', [NDController::class, 'getNDList']);
+    Route::get('/api/get-nd/{gnd_uid}', [NDController::class, 'getND']);
     Route::post('/api/insert-nd/{gnd_uid}', [NDController::class, 'insertND']);
+    Route::delete('/api/delete-nd/{nd_id}/{gnd_uid}', [NDController::class, 'deleteND']);
 
     Route::get('/api/get-gh', [GHController::class, 'getGH']);
     Route::post('/api/insert-gh', [GHController::class, 'insertGH']);
