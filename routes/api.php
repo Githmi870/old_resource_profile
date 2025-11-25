@@ -12,6 +12,8 @@ use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\Admin\UserManagementController;
 use \App\Http\Controllers\NDController;
 use \App\Http\Controllers\GHController;
+use App\Http\Controllers\SPController;
+use App\Http\Controllers\TDController;
 
 //Register API routes for fetching location and basic info names
 Route::get('/api/ds-by-district/{d_code}', [LocationController::class, 'getDS']);
@@ -68,6 +70,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/api/get-nd/{gnd_uid}', [NDController::class, 'getND']);
     Route::post('/api/insert-nd/{gnd_uid}', [NDController::class, 'insertND']);
     Route::delete('/api/delete-nd/{nd_id}/{gnd_uid}', [NDController::class, 'deleteND']);
+
+    Route::get('/api/get-sp/{gnd_uid}', [SPController::class, 'getSP']);
+    Route::post('/api/insert-sp/{gnd_uid}', [SPController::class, 'insertSP']);
+    Route::delete('/api/delete-sp/{sp_id}/{gnd_uid}', [SPController::class, 'deleteSP']);
+
+    Route::get('/api/get-td/{gnd_uid}', [TDController::class, 'getTD']);
+    Route::post('/api/insert-td/{gnd_uid}', [TDController::class, 'insertTD']);
+    Route::delete('/api/delete-td/{td_id}/{gnd_uid}', [TDController::class, 'deleteTD']);
 
     Route::get('/api/get-gh', [GHController::class, 'getGH']);
     Route::post('/api/insert-gh', [GHController::class, 'insertGH']);

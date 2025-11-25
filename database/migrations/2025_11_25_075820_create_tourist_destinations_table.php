@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('safety_places', function (Blueprint $table) {
-            $table->id('sp_id');
-            $table->string('sp_name');
-            $table->string('sp_address');
+        Schema::create('tourist_destinations', function (Blueprint $table) {
+            $table->id('td_id');
+            $table->string('td_name');
+            $table->string('td_reason');
+            $table->string('td_ownership');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('safety_places');
+        Schema::dropIfExists('tourist_destinations');
     }
 };

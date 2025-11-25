@@ -184,6 +184,40 @@
                     <x-primary-button>insert</x-primary-button>
                     <x-input-error :messages="$errors->all()" />
                 </form>
+                <script>
+                    document
+                        .getElementById("nd_problem")
+                        .addEventListener("change", function() {
+                            let check = this.value;
+                            let parent = document.getElementById("ndSourceForm");
+                            let existing = document.getElementById("other_nd_wrapper"); // wrapper id
+
+                            // If "වෙනත්" is chosen
+                            if (check === "වෙනත්") {
+                                // Only add if not already present
+                                if (!existing) {
+                                    let wrapper = document.createElement("div");
+                                    wrapper.className = "mb-6";
+                                    wrapper.id = "other_nd_wrapper"; // give wrapper an id
+
+                                    wrapper.innerHTML = `
+                                        <x-input-label for="other_nd">
+                                            වෙනත් ගැටළුව සදහන් කරන්න:
+                                        </x-input-label>
+                                        <x-text-input type="text" id="other_nd" required/>
+                                    `;
+
+                                    let secondChild = parent.children[2];
+                                    parent.insertBefore(wrapper, secondChild);
+                                }
+                            } else {
+                                // Remove if exists
+                                if (existing) {
+                                    parent.removeChild(existing);
+                                }
+                            }
+                        });
+                </script>
             </div>
 
 
@@ -235,6 +269,7 @@
                 <table class="shadow-md border rounded-lg w-full">
                     <thead>
                         <tr>
+                            <th class="px-4 py-2 border"></th>
                             <th class="px-4 py-2 border">ID</th>
                             <th class="px-4 py-2 border">ආරක්ෂිත ස්ථානයේ නම</th>
                             <th class="px-4 py-2 border">ලිපිනය</th>
@@ -255,28 +290,48 @@
                     @csrf
 
                     <div class="mb-6">
-                        <x-input-label for="tourist_place"> ස්ථානයේ නම
+                        <x-input-label for="td_name"> ස්ථානයේ නම
                             :</x-input-label>
-                        <x-text-input type="text" id="tourist_place" name="tourist_place" required />
+                        <x-text-input type="text" id="td_name" name="td_name" required />
                     </div>
 
                     <div class="mb-6">
-                        <x-input-label for="attaction">ආකර්ශනය ඇතිවීමට හේතුව/ස්ථානයේ විශේෂත්වය
+                        <x-input-label for="td_reason">ආකර්ශනය ඇතිවීමට හේතුව/ස්ථානයේ විශේෂත්වය
                             :</x-input-label>
-                        <x-text-input type="text" id="attaction" name="attaction" required />
+                        <x-text-input type="text" id="td_reason" name="td_reason" required />
                     </div>
 
                     <div class="mb-6">
-                        <x-input-label for="right">අයිතිය
+                        <x-input-label for="td_ownership">අයිතිය
                             :</x-input-label>
-                        <x-text-input type="text" id="right" name="right" required />
+                        <select id="td_ownership" class="border-gray-300 rounded-md shadow-sm">
+                            <option value="" disabled selected>වර්ගයක් තෝරන්න</option>
+                            <option value="පුරාවිද්‍යා">පුරාවිද්‍යා</option>
+                            <option value="වන සංරක්ෂණ">වන සංරක්ෂණ</option>
+                            <option value="වන ජීවි">වන ජීවි</option>
+                            <option value="පළාත් සභා">පළාත් සභා</option>
+                            <option value="ප්‍රාදේශීය සභා">ප්‍රාදේශීය සභා</option>
+                            <option value="වෙනත්">වෙනත්</option>
+                        </select>
                     </div>
-
-
-                    <br>
                     <x-primary-button>insert</x-primary-button>
                     <x-input-error :messages="$errors->all()" />
                 </form>
+                <script>
+                    document.getElementById('td_ownership').addEventListener('change', function() {
+                        if (this.value === "වෙනත්") {
+                            const parent = document.getElementById('touristSourceForm');
+                            const childbefore = parent.children[4];
+                            const wrapper = document.createElement('div');
+                            wrapper.innerHTML = `
+                                <x-input-label>වෙනත් වර්ගය සදහන් කරන්න:</x-input-label>
+                                <x-text-input type="text" id="td_other" class="mb-6" required />
+                            `;
+                            parent.insertBefore(wrapper, childbefore);
+                        }
+                    });
+                </script>
+
             </div>
 
 
@@ -284,6 +339,7 @@
                 <table class="shadow-md border rounded-lg w-full">
                     <thead>
                         <tr>
+                            <th class="px-4 py-2 border"></th>
                             <th class="px-4 py-2 border">ID</th>
                             <th class="px-4 py-2 border">ස්ථානයේ නම</th>
                             <th class="px-4 py-2 border">ආකර්ශනය ඇතිවීමට හේතුව/ස්ථානයේ විශේෂත්වය</th>
