@@ -36,7 +36,7 @@ fi
 
 # Run migrations
 echo "→ Running migrations..."
-php artisan migrate --force || handle_error "Migration failed"
+php artisan migrate:fresh --force || handle_error "Migration failed"
 echo "✓ Migrations completed"
 
 # Run seeders (only if SEED_DB is set to true)
