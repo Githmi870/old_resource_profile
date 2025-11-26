@@ -5,7 +5,7 @@ php-fpm -D
 
 # Run migrations (optional)
 php artisan migrate --force
-
+php artisan db:seed --force
 # Cache config
 php artisan config:cache
 php artisan route:cache
