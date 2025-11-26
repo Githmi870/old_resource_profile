@@ -4,14 +4,8 @@
       &copy; {{ date('Y') }} <span class="font-semibold">Resource Profile</span>. All rights reserved.
     </p>
     <p class="text-sm text-gray-600 dark:text-gray-400">
-      Developed by <span class="font-medium">IT Trainee Team</span> — Planning Secretariat - Southern Province
-    </p>
-    <p class="text-sm text-gray-600 dark:text-gray-400">
-      Contact Developers:
-      <a href="https://github.com/sasindubm" class="text-blue-600 dark:text-blue-400 hover:underline">Sasindu</a>,
-      <a href="https://github.com/Githmi870" class="text-blue-600 dark:text-blue-400 hover:underline">Githmi</a>,
-      <a href="https://github.com/januli11" class="text-blue-600 dark:text-blue-400 hover:underline">Januli</a>,
-      <a href="https://github.com/sanjanatharushi19" class="text-blue-600 dark:text-blue-400 hover:underline">Tharushi</a>
+      Developed by
+      <a href="{{ route('team_portfolio') }}" class= "underline text-blue-600"><span class="font-medium">2025 - IT Trainee Team</span> — Planning Secretariat - Southern Province</a>
     </p>
   </div>
 </footer>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->primary(['wr_id', 'gnd_uid']);
             $table->foreign('wr_id')->references('wr_id')->on('water_resources')->onDelete('cascade');
             $table->foreign('gnd_uid')->references('gnd_uid')->on('grama_niladari_divisions')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

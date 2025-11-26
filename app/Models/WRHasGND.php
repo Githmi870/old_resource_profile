@@ -11,8 +11,6 @@ class WRHasGND extends Model
         'gnd_uid',
     ];
 
-    public $timestamps = false;
-
     public function waterResource()
     {
         return $this->belongsToMany(WaterResource::class, 'wr_id', 'wr_id');

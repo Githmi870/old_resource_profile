@@ -76,7 +76,7 @@
                             <th class="px-4 py-2 border">පිරිමි</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="text-center">
                         <tr>
                             
                             <x-editable-table-cell></x-editable-table-cell>
@@ -110,7 +110,7 @@
                             <th class="px-4 py-2 border">පිරිමි</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="text-center">
                         <tr>
 
                             <x-editable-table-cell></x-editable-table-cell>

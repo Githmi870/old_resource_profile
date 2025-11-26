@@ -11,6 +11,4 @@ class SensitiveNatureZone extends Model
         'snz_importance',
         'normalized_name',
     ];
-
-    public $timestamps = false;
 }

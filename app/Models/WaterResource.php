@@ -11,6 +11,4 @@ class WaterResource extends Model
         'wr_type',
         'normalized_name',
     ];
-
-    public $timestamps = false;
 }

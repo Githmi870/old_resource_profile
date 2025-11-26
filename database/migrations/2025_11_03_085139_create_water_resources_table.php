@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('wr_type');
             $table->string('normalized_name')->nullable()->index();
             $table->unique(['normalized_name', 'wr_type']);
+            $table->timestamps();
         });
     }
 

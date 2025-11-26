@@ -1,5 +1,5 @@
 <x-app-layout>
-    @vite('resources/js/pages/health_con.js')
+    @vite('resources/js/pages/gh_con.js')
     <div class="py-6">
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8 mb-5">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
@@ -55,7 +55,7 @@
                             </tr>
 
                         </thead>
-                        <tbody id="healthSourceTableBody">
+                        <tbody class="text-center" id="healthSourceTableBody">
                         </tbody>
                     </table>
 
@@ -117,7 +117,7 @@
                                 <th class="px-4 py-2 border">රෝහල් වර්ගය</th>
                             </tr>
                         </thead>
-                        <tbody id="hospitalSourceTableBody">
+                        <tbody class="text-center" id="hospitalSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -170,7 +170,7 @@
                                 <th class="px-4 py-2 border">රෝහල් ලිපිනය</th>
                             </tr>
                         </thead>
-                        <tbody id="privateHospitalTableBody">
+                        <tbody class="text-center" id="privateHospitalTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -224,7 +224,7 @@
                                 <th class="px-4 py-2 border">ලිපිනය</th>
                             </tr>
                         </thead>
-                        <tbody id="doctorSourceTableBody">
+                        <tbody class="text-center" id="doctorSourceTableBody">
                         </tbody>
                     </table>
                 </div>

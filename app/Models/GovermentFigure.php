@@ -12,8 +12,6 @@ class GovermentFigure extends Model
         'gf_address',
         'normalized_name'
     ];
-    
-    public $timestamps = false;
 
 
     public function gnd()

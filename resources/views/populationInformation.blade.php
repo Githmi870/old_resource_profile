@@ -16,9 +16,9 @@
                         <th class="px-4 py-2 border">අවු.80 ට වැඩි</th>
                         <th class="px-4 py-2 border">මුළු ජනගහනය</th>
                     </tr>
-                    <tr>
+                    <tr class="pdFemale">
                         <td class="px-4 py-2 border">ස්ත්‍රී</td>
-                        <x-editable-table-cell id="04f">0</x-editable-table-cell>
+                        <x-editable-table-cell id="cell1"></x-editable-table-cell>
                         <x-editable-table-cell></x-editable-table-cell>
                         <x-editable-table-cell></x-editable-table-cell>
                         <x-editable-table-cell></x-editable-table-cell>
@@ -35,7 +35,11 @@
                         <x-editable-table-cell></x-editable-table-cell>
                     </tr>
                 </table>
+<<<<<<< HEAD
                 <x-primary-button id="pupt">Update</x-primary-button>
+=======
+                <x-primary-button id="btn-pup">Update</x-primary-button>
+>>>>>>> 777ce88c94a23f9672961c716ac7a37378cacda3
             </div>
         </div>
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8 mb-5">
@@ -171,7 +175,7 @@
                                     පුද්ගලයින් ගණන</th>
                             </tr>
                         </thead>
-                        <tbody id="populationSourceTableBody">
+                        <tbody class="text-center" id="populationSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -227,7 +231,7 @@
                                 <th class="px-4 py-2 border">කාන්තා ගෘහමූලික පවුල් සංඛ්‍යාව/ගෘහ කාණ්ඩ සංඛ්‍යාව</th>
                             </tr>
                         </thead>
-                        <tbody id="homeSourceTableBody">
+                        <tbody class="text-center" id="homeSourceTableBody">
                         </tbody>
                     </table>
                 </div>
