@@ -3,12 +3,16 @@ FROM node:20-alpine AS node-builder
 # Build frontend assets
 WORKDIR /app
 
-# Copy package files
+# Copy package files first
 COPY package*.json ./
-COPY vite.config.js ./
 
 # Install dependencies
-RUN npm ci
+RUN npm install
+
+# Copy configuration files
+COPY vite.config.js ./
+COPY postcss.config.js* ./
+COPY tailwind.config.js* ./
 
 # Copy source files needed for build
 COPY resources ./resources
@@ -16,6 +20,11 @@ COPY public ./public
 
 # Build assets for production
 RUN npm run build
+
+# Verify build output
+RUN echo "Checking build output:" && \
+    ls -la public/build/ && \
+    cat public/build/manifest.json
 
 # PHP Stage
 FROM php:8.3-fpm
@@ -59,13 +68,26 @@ COPY . /var/www
 # Copy built assets from node-builder
 COPY --from=node-builder /app/public/build /var/www/public/build
 
+# Verify assets were copied
+RUN echo "Verifying copied assets:" && \
+    ls -la /var/www/public/build/ && \
+    test -f /var/www/public/build/manifest.json || (echo "ERROR: manifest.json not found!" && exit 1)
+
 # Run composer scripts
 RUN composer run-script post-autoload-dump
 
+# Create necessary directories
+RUN mkdir -p /var/www/storage/logs \
+    && mkdir -p /var/www/storage/framework/sessions \
+    && mkdir -p /var/www/storage/framework/views \
+    && mkdir -p /var/www/storage/framework/cache \
+    && mkdir -p /var/www/storage/app/public \
+    && mkdir -p /var/www/bootstrap/cache
+
 # Set permissions
 RUN chown -R www-data:www-data /var/www \
-    && chmod -R 755 /var/www/storage \
-    && chmod -R 755 /var/www/bootstrap/cache
+    && chmod -R 775 /var/www/storage \
+    && chmod -R 775 /var/www/bootstrap/cache
 
 # Copy configuration files
 COPY docker/nginx.conf /etc/nginx/sites-available/default

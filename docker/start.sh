@@ -25,6 +25,14 @@ echo "→ Setting permissions..."
 chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache || handle_error "Failed to set permissions"
 chmod -R 775 /var/www/storage /var/www/bootstrap/cache || handle_error "Failed to chmod directories"
 
+# Ensure log directory exists with proper permissions
+mkdir -p /var/www/storage/logs
+mkdir -p /var/www/storage/framework/sessions
+mkdir -p /var/www/storage/framework/views
+mkdir -p /var/www/storage/framework/cache
+chown -R www-data:www-data /var/www/storage
+chmod -R 775 /var/www/storage
+
 # Wait for database to be ready
 echo "→ Waiting for database connection..."
 MAX_ATTEMPTS=30
@@ -83,9 +91,13 @@ echo "✓ Optimization completed"
 # Verify Vite manifest exists
 if [ -f /var/www/public/build/manifest.json ]; then
     echo "✓ Vite manifest found"
+    echo "→ Build directory contents:"
+    ls -lah /var/www/public/build/ | head -10
 else
     echo "WARNING: Vite manifest not found at /var/www/public/build/manifest.json"
     echo "   This may cause issues with asset loading"
+    echo "→ Checking public directory:"
+    ls -lah /var/www/public/
 fi
 
 # Display application info
@@ -96,6 +108,11 @@ echo "→ Debug Mode: ${APP_DEBUG:-false}"
 echo "→ URL: ${APP_URL:-not set}"
 echo "→ Database: ${DB_CONNECTION:-not set}"
 echo "========================================="
+
+# Test nginx configuration
+echo "→ Testing Nginx configuration..."
+nginx -t || handle_error "Nginx configuration test failed"
+echo "✓ Nginx configuration is valid"
 
 # Start supervisord (manages PHP-FPM and Nginx)
 echo "→ Starting services (PHP-FPM + Nginx)..."
