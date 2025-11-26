@@ -8,15 +8,10 @@ use App\Http\Controllers\AbondenedBuildingController;
 use App\Http\Controllers\AbondenedProjectController;
 use App\Http\Controllers\WaterResourceController;
 use App\Http\Controllers\SNZController;
-<<<<<<< HEAD
-use App\Http\Controllers\PopulationController;
-use App\Http\Controllers\GHController;
-=======
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\Admin\UserManagementController;
 use \App\Http\Controllers\NDController;
 use \App\Http\Controllers\GHController;
->>>>>>> 777ce88c94a23f9672961c716ac7a37378cacda3
 
 //Register API routes for fetching location and basic info names
 Route::get('/api/ds-by-district/{d_code}', [LocationController::class, 'getDS']);
