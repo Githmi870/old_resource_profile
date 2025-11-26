@@ -19,8 +19,9 @@ export default defineConfig({
         }),
     ],
     build: {
-        manifest: true,
+        manifest: "manifest.json", // Explicitly set manifest filename
         outDir: "public/build",
+        emptyOutDir: true,
         rollupOptions: {
             output: {
                 manualChunks: undefined,
