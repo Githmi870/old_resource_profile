@@ -58,4 +58,34 @@ class NDController extends Controller
             'message' => 'Successful'
         ]);
     }
+
+    public function getND($gndUid)
+    {
+        return response()->json(
+            NaturalDisaster::select('natural_disasters.nd_id','natural_disasters.nd_name', 'n_d_has_g_n_d_s.nd_period', 'n_d_has_g_n_d_s.nd_solution')
+                ->join('n_d_has_g_n_d_s', 'natural_disasters.nd_id', '=', 'n_d_has_g_n_d_s.nd_id')
+                ->where('n_d_has_g_n_d_s.gnd_uid', $gndUid)
+                ->get()
+        );
+    }
+
+    public function deleteND($id, $gndUid)
+    {
+        try {
+            // Remove only the link between nd and GND
+            NDHasGND::where('nd_id', $id)
+                ->where('gnd_uid', $gndUid)
+                ->delete();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Natural Disaster unlinked from GND successfully.'
+            ]);
+        } catch (\Throwable $e) {
+            return response()->json([
+                'success' => false,
+                'error' => $e->getMessage()
+            ], 500);
+        }
+    }
 }
