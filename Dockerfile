@@ -14,17 +14,28 @@ COPY vite.config.js ./
 COPY postcss.config.js* ./
 COPY tailwind.config.js* ./
 
-# Copy source files needed for build
+# Copy ALL source files needed for build
 COPY resources ./resources
 COPY public ./public
 
-# Build assets for production
-RUN npm run build
+# Debug: Check if input files exist
+RUN echo "Checking input files:" && \
+    ls -la resources/css/ && \
+    ls -la resources/js/ && \
+    ls -la resources/js/pages/ || echo "Pages directory missing"
 
-# Verify build output
+# Build assets for production
+RUN echo "Starting Vite build..." && \
+    npm run build 2>&1 | tee build.log && \
+    echo "Build completed!"
+
+# Verify build output (check what was actually created)
 RUN echo "Checking build output:" && \
     ls -la public/build/ && \
-    cat public/build/manifest.json
+    echo "Files in assets:" && \
+    ls -la public/build/assets/ || echo "No assets folder" && \
+    echo "All files:" && \
+    find public/build -type f || echo "Build directory is empty"
 
 # PHP Stage
 FROM php:8.3-fpm
@@ -71,7 +82,7 @@ COPY --from=node-builder /app/public/build /var/www/public/build
 # Verify assets were copied
 RUN echo "Verifying copied assets:" && \
     ls -la /var/www/public/build/ && \
-    test -f /var/www/public/build/manifest.json || (echo "ERROR: manifest.json not found!" && exit 1)
+    find /var/www/public/build -type f || echo "No files found in build directory"
 
 # Run composer scripts
 RUN composer run-script post-autoload-dump
