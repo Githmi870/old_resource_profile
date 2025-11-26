@@ -38,6 +38,9 @@ echo "→ Waiting for database connection..."
 MAX_ATTEMPTS=30
 ATTEMPT=0
 
+# Set to production environment if not set
+export APP_ENV=${APP_ENV:-production}
+
 until php artisan db:show 2>/dev/null || [ $ATTEMPT -eq $MAX_ATTEMPTS ]; do
     ATTEMPT=$((ATTEMPT+1))
     echo "   Attempt $ATTEMPT/$MAX_ATTEMPTS - waiting for database..."
@@ -79,6 +82,7 @@ php artisan config:clear || true
 php artisan route:clear || true
 php artisan view:clear || true
 php artisan cache:clear || true
+php artisan event:clear || true
 echo "✓ Caches cleared"
 
 # Optimize for production
