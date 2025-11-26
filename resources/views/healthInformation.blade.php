@@ -9,8 +9,8 @@
                     <table class="shadow-md border rounded-lg w-full">
                         <thead>
                             <tr>
-                                <th class="px-4 py-2 border">ID</th>
-                                <th class="px-4 py-2 border" colspan="2" style="text-align: left;">සෞඛ්‍ය ආයතන වර්ගය
+                                <th class="px-4 py-2 border"></th>
+                                <th class="px-4 py-2 border" colspan="2" style="text-align: left;"><center>සෞඛ්‍ය ආයතන වර්ගය</center>
                                 </th>
                                 <th class="px-4 py-2 border">සංඛ්‍යාව</th>
                             </tr>

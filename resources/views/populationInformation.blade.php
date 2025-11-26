@@ -35,7 +35,11 @@
                         <x-editable-table-cell></x-editable-table-cell>
                     </tr>
                 </table>
+<<<<<<< HEAD
+                <x-primary-button id="pupt">Update</x-primary-button>
+=======
                 <x-primary-button id="btn-pup">Update</x-primary-button>
+>>>>>>> 777ce88c94a23f9672961c716ac7a37378cacda3
             </div>
         </div>
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8 mb-5">
