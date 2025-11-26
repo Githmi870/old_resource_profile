@@ -1,4 +1,5 @@
 <x-app-layout>
+    @vite('resources/js/pages/pop_con.js')
     <div class="py-6">
 
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8 mb-5">
@@ -17,7 +18,7 @@
                     </tr>
                     <tr>
                         <td class="px-4 py-2 border">ස්ත්‍රී</td>
-                        <x-editable-table-cell>0</x-editable-table-cell>
+                        <x-editable-table-cell id="04f">0</x-editable-table-cell>
                         <x-editable-table-cell></x-editable-table-cell>
                         <x-editable-table-cell></x-editable-table-cell>
                         <x-editable-table-cell></x-editable-table-cell>
@@ -34,7 +35,7 @@
                         <x-editable-table-cell></x-editable-table-cell>
                     </tr>
                 </table>
-                <x-primary-button>Update</x-primary-button>
+                <x-primary-button id="pupt">Update</x-primary-button>
             </div>
         </div>
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8 mb-5">

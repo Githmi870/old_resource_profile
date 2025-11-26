@@ -12,6 +12,8 @@ export default defineConfig({
                 'resources/js/pages/envinfo_con.js',
                 'resources/js/pages/reg_con.js',
                 'resources/js/pages/user_con.js',
+                'resources/js/pages/pop_con.js',
+                'resources/js/pages/health_con.js',
             ],
             refresh: true,
         }),

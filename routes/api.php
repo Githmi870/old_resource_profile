@@ -8,6 +8,8 @@ use App\Http\Controllers\AbondenedBuildingController;
 use App\Http\Controllers\AbondenedProjectController;
 use App\Http\Controllers\WaterResourceController;
 use App\Http\Controllers\SNZController;
+use App\Http\Controllers\PopulationController;
+use App\Http\Controllers\GHController;
 
 //Register API routes for fetching location and basic info names
 Route::get('/api/ds-by-district/{d_code}', [LocationController::class, 'getDS']);
@@ -46,8 +48,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/api/get-snz/{gnd_uid}', [SNZController::class, 'getSNZ']);
     Route::post('/api/insert-snz/{gnd_uid}', [SNZController::class, 'insertSNZ']);
     Route::delete('/api/delete-snz/{snz_id}', [SNZController::class, 'deleteSNZ']);
+
+    //Population routes
+    Route::post('/api/insert-gh', [GHControlle::class, 'insertGh']);
 });
 
 Route::get('/api/get-users', [App\Http\Controllers\Admin\UserManagementController::class, 'index']);
 Route::post('/api/apr-user/{user}', [App\Http\Controllers\Admin\UserManagementController::class, 'approve']);
 Route::post('/api/rej-user/{user}', [App\Http\Controllers\Admin\UserManagementController::class, 'reject']);
+Route::post('/api/insert-pop/{gnd_uid}', [PopulationController::class, 'insert']);
