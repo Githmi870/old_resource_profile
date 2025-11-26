@@ -12,6 +12,14 @@ handle_error() {
     exit 1
 }
 
+# Clean up any existing processes/sockets
+echo "→ Cleaning up existing processes..."
+rm -f /run/nginx.pid
+rm -f /var/run/nginx.pid
+pkill -9 nginx 2>/dev/null || true
+pkill -9 php-fpm 2>/dev/null || true
+sleep 2
+
 # Set proper permissions
 echo "→ Setting permissions..."
 chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache || handle_error "Failed to set permissions"
