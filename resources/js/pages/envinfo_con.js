@@ -350,40 +350,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     //Natural Disaster Section
-    document
-        .getElementById("nd_problem")
-        .addEventListener("change", function () {
-            let check = this.value;
-            let parent = document.getElementById("ndSourceForm");
-            let existing = document.getElementById("other_nd_wrapper"); // wrapper id
-
-            // If "වෙනත්" is chosen
-            if (check === "වෙනත්") {
-                // Only add if not already present
-                if (!existing) {
-                    let wrapper = document.createElement("div");
-                    wrapper.className = "mb-6";
-                    wrapper.id = "other_nd_wrapper"; // give wrapper an id
-
-                    wrapper.innerHTML = `
-                <label for="other_nd"
-                    class="block font-semibold font-medium text-lg text-gray-700 dark:text-gray-300">
-                    වෙනත් ගැටළුව සදහන් කරන්න:
-                </label>
-                <input type="text" id="other_nd" required
-                    class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" />
-            `;
-
-                    let secondChild = parent.children[2];
-                    parent.insertBefore(wrapper, secondChild);
-                }
-            } else {
-                // Remove if exists
-                if (existing) {
-                    parent.removeChild(existing);
-                }
-            }
-        });
 
     function fetchNDList() {
         fetch(`/api/get-nd-list`)
@@ -439,6 +405,284 @@ document.addEventListener("DOMContentLoaded", () => {
                         data.success ? "success" : "error"
                     );
                     this.reset();
+                    fetchND();
                 });
+        });
+
+    function fetchND() {
+        fetch(`/api/get-nd/${gndUid}`)
+            .then((res) => res.json())
+            .then((data) => {
+                let ndBody = "";
+                data.forEach((item, index) => {
+                    ndBody += `
+                        <tr>
+                            <td class="border px-3 py-1 text-center">
+                                <button class="px-2 py-0 mb-2 border rounded bg-gray-200 edit-btn text-blue-600 hover:underline" data-id="${
+                                    item.nd_id
+                                }">Edit</button>
+                                <button class="px-2 py-0 mb-1 border rounded bg-gray-200 delete-btn text-red-600 hover:underline ml-4" data-id="${
+                                    item.nd_id
+                                }">Delete</button>
+                            </td>
+                            <td class="px-6 py-6 border text-center">${
+                                index + 1
+                            }</td>
+                            <td class="px-6 py-6 border text-center">${
+                                item.nd_name
+                            }</td>
+                            <td class="px-6 py-6 border text-center">${
+                                item.nd_period
+                            }</td>
+                            <td class="px-6 py-6 border text-center">${
+                                item.nd_solution
+                            }</td>
+                        </tr>
+                    `;
+                });
+                document.getElementById("ndSourceTableBody").innerHTML = ndBody;
+            });
+    }
+
+    fetchND();
+
+    document
+        .getElementById("ndSourceTableBody")
+        .addEventListener("click", function (event) {
+            if (event.target.classList.contains("delete-btn")) {
+                const ndId = event.target.dataset.id;
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "Delete the Natural Disaster link?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, delete",
+                    cancelButtonText: "Cancel",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch(`/api/delete-nd/${ndId}/${gndUid}`, {
+                            method: "DELETE",
+                            headers: csrfHeaders,
+                        })
+                            .then((res) => res.json())
+                            .then((data) => {
+                                Swal.fire("Deleted!", data.message, "success");
+                                fetchND();
+                            })
+                            .catch(() =>
+                                Swal.fire(
+                                    "Error",
+                                    "Could not delete resource.",
+                                    "error"
+                                )
+                            );
+                    }
+                });
+            }
+        });
+
+    function fetchSP() {
+        fetch(`/api/get-sp/${gndUid}`)
+            .then((res) => res.json())
+            .then((data) => {
+                let spBody = "";
+                data.forEach((item, index) => {
+                    spBody += `
+                        <tr class="">
+                        <td class="border px-3 py-1 text-center">
+                            <button class="px-2 py-0 mb-2 border rounded bg-gray-200 edit-btn text-blue-600 hover:underline" data-id="${
+                                item.sp_id
+                            }">Edit</button>
+                            <button class="px-2 py-0 mb-1 border rounded bg-gray-200 delete-btn text-red-600 hover:underline ml-4" data-id="${
+                                item.sp_id
+                            }">Delete</button>
+                        </td>
+                        <td class="px-6 py-6 border text-center">${
+                            index + 1
+                        }</td>
+                        <td class="px-6 py-6 border text-center">${
+                            item.sp_name
+                        }</td>
+                        <td class="px-6 py-6 border text-center">${
+                            item.sp_address
+                        }</td>
+                        </tr>
+                    `;
+                });
+                document.getElementById("spTableBody").innerHTML = spBody;
+            });
+    }
+
+    fetchSP();
+
+    document
+        .getElementById("spSourceForm")
+        .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = new FormData();
+            formData.append(
+                "sp_name",
+                document.getElementById("sp_name").value
+            );
+            formData.append(
+                "sp_address",
+                document.getElementById("sp_address").value
+            );
+            formData.append("gnd_uid", gndUid);
+
+            fetch(`/api/insert-sp/${gndUid}`, {
+                headers: csrfHeaders,
+                method: "POST",
+                body: formData,
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    Swal.fire(data.message);
+                    this.reset();
+                    fetchSP();
+                });
+        });
+
+    document
+        .getElementById("spTableBody")
+        .addEventListener("click", function (event) {
+            if (event.target.classList.contains("delete-btn")) {
+                const spId = event.target.dataset.id;
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "Delete the Safety Place link?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, delete",
+                    cancelButtonText: "Cancel",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch(`/api/delete-sp/${spId}/${gndUid}`, {
+                            method: "DELETE",
+                            headers: csrfHeaders,
+                        })
+                            .then((res) => res.json())
+                            .then((data) => {
+                                Swal.fire("Deleted!", data.message, "success");
+                                fetchSP();
+                            })
+                            .catch(() =>
+                                Swal.fire(
+                                    "Error",
+                                    "Could not delete resource.",
+                                    "error"
+                                )
+                            );
+                    }
+                });
+            }
+        });
+    
+    function fetchTD() {
+        fetch(`/api/get-td/${gndUid}`)
+            .then((res) => res.json())
+            .then((data) => {
+                let tdBody = "";
+                data.forEach((item, index) => {
+                    tdBody += `
+                    <tr class="">
+                        <td class="border px-3 py-1 text-center">
+                            <button class="px-2 py-0 mb-2 border rounded bg-gray-200 edit-btn text-blue-600 hover:underline" data-id="${
+                                item.td_id
+                            }">Edit</button>
+                            <button class="px-2 py-0 mb-1 border rounded bg-gray-200 delete-btn text-red-600 hover:underline ml-4" data-id="${
+                                item.td_id
+                            }">Delete</button>
+                        </td>
+                        <td class="px-6 py-6 border text-center">${
+                            index + 1
+                        }</td>
+                        <td class="px-6 py-6 border text-center">${
+                            item.td_name
+                        }</td>
+                        <td class="px-6 py-6 border text-center">${
+                            item.td_reason
+                        }</td>
+                        <td class="px-6 py-6 border text-center">${
+                            item.td_ownership
+                        }</td>
+                        </tr>
+                `;
+                });
+                document.getElementById("touristTableBody").innerHTML = tdBody;
+            });
+    }
+
+    fetchTD();
+
+    document
+        .getElementById("touristSourceForm")
+        .addEventListener("submit", function (e) {
+            e.preventDefault();
+            const formData = new FormData();
+            formData.append(
+                "td_name",
+                document.getElementById("td_name").value
+            );
+            formData.append(
+                "td_reason",
+                document.getElementById("td_reason").value
+            );
+            formData.append(
+                "td_ownership",
+                document.getElementById("td_ownership").value
+            );
+            formData.append("gnd_uid", gndUid);
+
+            fetch(`/api/insert-td/${gndUid}`, {
+                headers: csrfHeaders,
+                method: "POST",
+                body: formData,
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    Swal.fire(data.message);
+                    this.reset();
+                    fetchTD();
+                });
+        });
+
+    document
+        .getElementById("touristTableBody")
+        .addEventListener("click", function (event) {
+            if (event.target.classList.contains("delete-btn")) {
+                const tdId = event.target.dataset.id;
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "Delete the Tourist Destination link?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, delete",
+                    cancelButtonText: "Cancel",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch(`/api/delete-td/${tdId}/${gndUid}`, {
+                            method: "DELETE",
+                            headers: csrfHeaders,
+                        })
+                            .then((res) => res.json())
+                            .then((data) => {
+                                Swal.fire("Deleted!", data.message, "success");
+                                fetchTD();
+                            })
+                            .catch(() =>
+                                Swal.fire(
+                                    "Error",
+                                    "Could not delete resource.",
+                                    "error"
+                                )
+                            );
+                    }
+                });
+            }
         });
 });
