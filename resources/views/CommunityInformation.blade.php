@@ -5,7 +5,7 @@
 
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">1. ස්වේච්ඡා සංවිධාන</h2>
-                    < id="waterSourceForm"
+                    <form id="volunteerForm"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
 
                             @csrf
@@ -25,6 +25,7 @@
                                 class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                 Insert
                             </button>
+
                     </form>
                 </div>
 
@@ -38,7 +39,7 @@
 
                             </tr>
                         </thead>
-                        <tbody class="text-center" id="waterSourceTableBody">
+                        <tbody class="text-center" id="volunteerTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -49,9 +50,9 @@
 
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">2. රාජ්‍ය නොවන සංවිධාන</h2>
-                    <form action="" method="post"
+                    <form id="nonStateForm"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
-                        <form id="waterSourceForm" class="space-y-4">
+
                             @csrf
 
                             <div class="mb-6">
@@ -80,9 +81,9 @@
                             <br>
                             <button type="submit"
                                 class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
-                                Insert
+                               Insert
                             </button>
-                        </form>
+
                     </form>
                 </div>
 
@@ -97,7 +98,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody class="text-center" id="waterSourceTableBody">
+                        <tbody class="text-center" id="nonStateTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -109,9 +110,9 @@
 
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">3. මිතුරු සංවිධාන</h2>
-                    <form action="" method="post"
+                    <form id="friendSourceForm"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
-                        <form id="waterSourceForm" class="space-y-4">
+
                             @csrf
 
                             <div class="mb-6">
@@ -142,7 +143,7 @@
                                 class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                 Insert
                             </button>
-                        </form>
+
                     </form>
                 </div>
 
@@ -157,7 +158,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody class="text-center" id="waterSourceTableBody">
+                        <tbody class="text-center" id="friendSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -170,7 +171,7 @@
                     <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">4. ග්‍රා.නි.කොට්ඨාසයේ ක්‍රියාත්මක අවමංගල්‍යාධාර සමිති</h2>
                     <form action="" method="post"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
-                        <form id="waterSourceForm" class="space-y-4">
+                        <form id="funnaralSourceForm" class="space-y-4">
                             @csrf
 
                             <div class="mb-6">
@@ -216,7 +217,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody class="text-center" id="waterSourceTableBody">
+                        <tbody class="text-center" id="funnaralSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -227,9 +228,9 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">5. ග්‍රාම සංවර්ධන සමිති</h2>
-                    <form action="" method="post"
+                    <form id="villageDevSourceForm"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
-                        <form id="waterSourceForm" class="space-y-4">
+
                             @csrf
 
                             <div class="mb-6">
@@ -260,7 +261,7 @@
                                 class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                 Insert
                             </button>
-                        </form>
+
                     </form>
                 </div>
 
@@ -275,7 +276,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody class="text-center" id="waterSourceTableBody">
+                        <tbody class="text-center" id="villageDevSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -286,9 +287,9 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">6. යෞවන සමාජ සමිති</h2>
-                    <form action="" method="post"
+                    <form id="youthClubSourceForm"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
-                        <form id="waterSourceForm" class="space-y-4">
+
                             @csrf
 
                             <div class="mb-6">
@@ -319,7 +320,7 @@
                                 class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                 Insert
                             </button>
-                        </form>
+
                     </form>
                 </div>
 
@@ -334,7 +335,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody class="text-center" id="waterSourceTableBody">
+                        <tbody class="text-center" id="youthClubSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -345,9 +346,9 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">7. ක්‍රිඩා සමාජ සමිති</h2>
-                    <form action="" method="post"
+                    <form id="sportsClubForm"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
-                        <form id="waterSourceForm" class="space-y-4">
+
                             @csrf
 
                             <div class="mb-6">
@@ -378,7 +379,7 @@
                                 class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                 Insert
                             </button>
-                        </form>
+
                     </form>
                 </div>
 
@@ -393,7 +394,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody class="text-center" id="waterSourceTableBody">
+                        <tbody class="text-center" id="sportsClubTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -404,9 +405,9 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">8. කාන්තා සමිති</h2>
-                    <form action="" method="post"
+                    <form id="womenSourceForm"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
-                        <form id="waterSourceForm" class="space-y-4">
+
                             @csrf
 
                             <div class="mb-6">
@@ -437,7 +438,7 @@
                                 class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                 Insert
                             </button>
-                        </form>
+
                     </form>
                 </div>
 
@@ -452,7 +453,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody class="text-center" id="waterSourceTableBody">
+                        <tbody class="text-center" id="womenTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -463,9 +464,9 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">9. වැඩිහිටි සමිති</h2>
-                    <form action="" method="post"
+                    <form id="adultSourceForm"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
-                        <form id="waterSourceForm" class="space-y-4">
+
                             @csrf
 
                             <div class="mb-6">
@@ -496,7 +497,7 @@
                                 class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                 Insert
                             </button>
-                        </form>
+
                     </form>
                 </div>
 
@@ -511,7 +512,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody class="text-center" id="waterSourceTableBody">
+                        <tbody class="text-center" id="adultTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -522,9 +523,9 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">10. ළමා සමාජ සමිති</h2>
-                    <form action="" method="post"
+                    <form id="childrenClubForm"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
-                        <form id="waterSourceForm" class="space-y-4">
+
                             @csrf
 
                             <div class="mb-6">
@@ -555,7 +556,7 @@
                                 class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                 Insert
                             </button>
-                        </form>
+
                     </form>
                 </div>
 
@@ -570,7 +571,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody class="text-center" id="waterSourceTableBody">
+                        <tbody class="text-center" id="childrenClubTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -581,9 +582,9 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">11. සමෘද්ධි සමිති</h2>
-                    <form action="" method="post"
+                    <form id="samurdhiSourceForm"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
-                        <form id="waterSourceForm" class="space-y-4">
+
                             @csrf
 
                             <div class="mb-6">
@@ -614,7 +615,7 @@
                                 class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                 Insert
                             </button>
-                        </form>
+
                     </form>
                 </div>
 
@@ -629,7 +630,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody class="text-center" id="waterSourceTableBody">
+                        <tbody class="text-center" id="samurdhiTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -640,9 +641,9 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">12. ගොවි සමිති</h2>
-                    <form action="" method="post"
+                    <form id="farmerSourceForm"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
-                        <form id="waterSourceForm" class="space-y-4">
+
                             @csrf
 
                             <div class="mb-6">
@@ -673,7 +674,7 @@
                                 class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                 Insert
                             </button>
-                        </form>
+
                     </form>
                 </div>
 
@@ -688,7 +689,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody class="text-center" id="waterSourceTableBody">
+                        <tbody class="text-center" id="farmerSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -699,9 +700,9 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">13. ආගමික සංවිධාන</h2>
-                    <form action="" method="post"
+                    <form id="religiousSourceForm"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
-                        <form id="waterSourceForm" class="space-y-4">
+
                             @csrf
 
                             <div class="mb-6">
@@ -732,7 +733,7 @@
                                 class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                 Insert
                             </button>
-                        </form>
+
                     </form>
                 </div>
 
@@ -747,7 +748,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody class="text-center" id="waterSourceTableBody">
+                        <tbody class="text-center" id="religiousSourceTableBody">
                         </tbody>
                     </table>
                 </div>
