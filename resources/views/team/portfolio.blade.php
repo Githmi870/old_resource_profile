@@ -61,7 +61,7 @@
                                 <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Sasindu Manamperi</h3>
                                 <p class="text-lg text-blue-600 font-semibold mb-1">Senior Full-Stack Developer & Team Lead</p>
                                 <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">NVQ5 in ICT (Apprentice)</p>
-                                
+
                                 <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">Lead architect and senior developer overseeing both mobile and web applications. Managing full-stack development of Resource Profile and spearheading the complete Flutter mobile application (CivicData Core) including database architecture.</p>
 
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -198,7 +198,7 @@
                         <div class="p-6 bg-white border-b border-gray-200">
                             <div class="flex justify-center mb-4">
                                 <div class="w-24 h-24 rounded-lg bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-md">
-                                    <span class="text-3xl">👨‍💻</span>
+                                    <span class="text-3xl"><img src="https://avatars.githubusercontent.com/u/198938035?v=4" alt=""></span>
                                 </div>
                             </div>
 
