@@ -42,14 +42,14 @@
 
             <!-- Team Lead Section -->
             <div class="mb-12">
-                <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Team Lead & Senior Developer</h2>
+                <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Team Lead & Main Developer</h2>
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg border-l-4 border-l-blue-600">
                     <div class="p-6 bg-white">
                         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                             <!-- Avatar Section -->
                             <div class="flex flex-col items-center justify-start">
                                 <div class="w-32 h-32 rounded-lg bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-md mb-4">
-                                    <span class="text-5xl">👨‍💻</span>
+                                    <span class="text-5xl"><img src="https://avatars.githubusercontent.com/u/170861981?s=400&u=7b19afb6e9c3e70e58b685caa77f6cc902a3277c&v=4" alt="ProfilePhoto"></span>
                                 </div>
                                 <a href="mailto:msasindu450@gmail.com" class="w-full px-4 py-2 bg-blue-600 text-white rounded font-semibold hover:bg-blue-700 transition text-center text-sm">
                                     Contact
@@ -59,10 +59,10 @@
                             <!-- Main Info -->
                             <div class="md:col-span-3">
                                 <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Sasindu Manamperi</h3>
-                                <p class="text-lg text-blue-600 font-semibold mb-1">Senior Full-Stack Developer & Team Lead</p>
+                                <p class="text-lg text-blue-600 font-semibold mb-1">Trainee Full-Stack Developer & Team Lead</p>
                                 <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">NVQ5 in ICT (Apprentice)</p>
-                                
-                                <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">Lead architect and senior developer overseeing both mobile and web applications. Managing full-stack development of Resource Profile and spearheading the complete Flutter mobile application (CivicData Core) including database architecture.</p>
+
+                                <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">Lead architect and developer overseeing both mobile and web applications. Managing full-stack development of Resource Profile and spearheading the complete Flutter mobile application (CivicData Core) including database architecture.</p>
 
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                     <!-- Responsibilities -->
@@ -138,12 +138,12 @@
                         <div class="p-6 bg-white border-b border-gray-200">
                             <div class="flex justify-center mb-4">
                                 <div class="w-24 h-24 rounded-lg bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-md">
-                                    <span class="text-3xl">👨‍💻</span>
+                                    <span class="text-3xl"><img src="https://avatars.githubusercontent.com/u/198726023?v=4" alt=""></span>
                                 </div>
                             </div>
 
                             <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-1 text-center">Githmi Sanara</h3>
-                            <p class="text-blue-600 font-semibold text-sm text-center mb-1">Frontend Developer & Technical Support</p>
+                            <p class="text-blue-600 font-semibold text-sm text-center mb-1">Trainee Frontend Developer & Technical Support</p>
                             <p class="text-gray-600 dark:text-gray-400 text-xs text-center mb-4">NVQ5 in ICT (Apprentice)</p>
 
                             <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
@@ -203,7 +203,7 @@
                             </div>
 
                             <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-1 text-center">Januli Jayathma</h3>
-                            <p class="text-blue-600 font-semibold text-sm text-center mb-1">Frontend Developer</p>
+                            <p class="text-blue-600 font-semibold text-sm text-center mb-1">Trainee Frontend Developer</p>
                             <p class="text-gray-600 dark:text-gray-400 text-xs text-center mb-4">NVQ5 in ICT (Apprentice)</p>
 
                             <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
@@ -232,7 +232,7 @@
                                         </li>
                                         <li class="text-gray-700 dark:text-gray-300 text-xs flex items-start">
                                             <span class="text-blue-500 mr-2 font-bold">•</span>
-                                            <span>JavaScript functionality implementation</span>
+                                            <span>CivicData Core User interface design</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -256,7 +256,7 @@
                             </div>
 
                             <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-1 text-center">Tharushi Sanjana</h3>
-                            <p class="text-blue-600 font-semibold text-sm text-center mb-1">Frontend Developer</p>
+                            <p class="text-blue-600 font-semibold text-sm text-center mb-1">Trainee Frontend Developer</p>
                             <p class="text-gray-600 dark:text-gray-400 text-xs text-center mb-4">HND in IT (Apprentice)</p>
 
                             <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
@@ -282,6 +282,10 @@
                                         <li class="text-gray-700 dark:text-gray-300 text-xs flex items-start">
                                             <span class="text-blue-500 mr-2 font-bold">•</span>
                                             <span>Resource Profile frontend development</span>
+                                        </li>
+                                        <li class="text-gray-700 dark:text-gray-300 text-xs flex items-start">
+                                            <span class="text-blue-500 mr-2 font-bold">•</span>
+                                            <span>Resource Profile Database Design</span>
                                         </li>
                                     </ul>
                                 </div>

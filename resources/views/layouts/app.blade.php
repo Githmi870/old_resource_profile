@@ -20,7 +20,10 @@
 
 </head>
 
-<body class="font-sans antialiased font-sinhala" data-gnd-uid="{{ Auth::user()->gnd_uid }}">
+<body class="font-sans antialiased font-sinhala"
+    @if(Auth::check() && empty($hideGndUid))
+    data-gnd-uid="{{ Auth::user()->gnd_uid }}"
+    @endif>
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
 
         @if (!$hideNavigation)

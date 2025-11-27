@@ -15,8 +15,8 @@ Route::get('/wait', function () {
     return view('WaitingScreen');
 })->name('wait');
 
-Route::get('/team/portfolio', function(){
-    return view('team.portfolio');
+Route::get('/team/portfolio', function () {
+    return view('team.portfolio', ['hideGndUid' => true]);
 })->name('team_portfolio');
 
 Route::middleware('auth', 'approved')->group(function () {
