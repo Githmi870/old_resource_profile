@@ -1,9 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     const gndUid = document.body.dataset.gndUid;
 
-    // Goverment Figure Section
+    // Helper function to get the CSRF token from the meta tag
+    function getCsrfToken() {
+        return document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    }
+
+    // Common headers object including the CSRF token
+    const csrfHeaders = {
+        'X-CSRF-TOKEN': getCsrfToken()
+    };
+
+    //--- Goverment Figure Section ---
     function fetchGovFigures() {
-        fetch(`/api/get-gf/${gndUid}`)
+        fetch(`/api/get-gf/${gndUid}`, {
+            headers: csrfHeaders
+        })
             .then(res => res.json())
             .then(data => {
                 let govFigBody = '';
@@ -40,18 +52,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         fetch(`/api/insert-gf/${gndUid}`, {
             method: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-            },
+            headers: csrfHeaders,
             body: formData
         })
             .then(res => res.json())
             .then(data => {
-                alert('Government Figure inserted successfully!');
+                if (data.success) {
+                    alert(data.message);
+                } else {
+                    alert('Error: ' + data.error);
+                }
                 this.reset();
                 fetchGovFigures();
             })
-            .catch(error => console.error('Error submitting form:', error));
+            .catch(error =>
+                alert('Error:', error)
+            );
     });
 
     document.getElementById('govFigTable').addEventListener('click', function (event) {
@@ -60,9 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (confirm('Are you sure you want to delete this Government Figure?')) {
                 fetch(`/api/delete-gf/${gfId}`, {
                     method: 'DELETE',
-                    headers: {
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                    }
+    
+                    headers: csrfHeaders
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -75,10 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // Abondened Goverment Buildings Section
+    //--- Abondened Goverment Buildings Section ---
 
     function fetchAbGovBuildings() {
-        fetch(`/api/get-agb/${gndUid}`)
+        fetch(`/api/get-agb/${gndUid}`, {
+            headers: csrfHeaders
+        })
             .then(res => res.json())
             .then(data => {
                 let AbFigBody = '';
@@ -115,9 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         fetch(`/api/insert-agb/${gndUid}`, {
             method: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-            },
+            headers: csrfHeaders,
             body: abData
         })
             .then(res => res.json())
@@ -135,9 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (confirm('Are you sure you want to delete this Abondened Building?')) {
                 fetch(`/api/delete-agb/${abId}`, {
                     method: 'DELETE',
-                    headers: {
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                    }
+    
+                    headers: csrfHeaders
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -150,9 +164,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // Abondened Projects Section
+    //--- Abondened Projects Section ---
     function fetchAProjects() {
-        fetch(`/api/get-ap/${gndUid}`)
+        fetch(`/api/get-ap/${gndUid}`, {
+            headers: csrfHeaders
+        })
             .then(res => res.json())
             .then(data => {
                 let apBody = '';
@@ -185,9 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         fetch(`/api/insert-ap/${gndUid}`, {
             method: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-            },
+            headers: csrfHeaders,
             body: apdata
         })
             .then(res => res.json())
@@ -204,9 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (confirm('Are you sure you want to delete this Abondened Project?')) {
                 fetch(`/api/delete-ap/${apId}`, {
                     method: 'DELETE',
-                    headers: {
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                    }
+    
+                    headers: csrfHeaders
                 })
                     .then(res => res.json())
                     .then(data => {

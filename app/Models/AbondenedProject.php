@@ -12,6 +12,7 @@ class AbondenedProject extends Model
         'ap_id',
         'ap_name',
         'ap_reason',
+        'normalized_name',
     ];
 
     public function gnd() {

@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('local_government_divisions', function (Blueprint $table) {
-            $table->string('lgd_uid')->primary();
-            $table->string('lgd_name');
+        Schema::create('water_resources', function (Blueprint $table) {
+            $table->id('wr_id');
+            $table->string('wr_name');
+            $table->string('wr_type');
+            $table->string('normalized_name')->nullable()->index();
+            $table->unique(['normalized_name', 'wr_type']);
         });
     }
 
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('local_government_divisions');
+        Schema::dropIfExists('water_resources');
     }
 };

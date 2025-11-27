@@ -28,4 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('d_name').innerHTML = data['d_name'];
             document.getElementById('d_named').innerHTML = data['d_name'];
         });
+
+    fetch(`/api/lgd-by-gnd/${gndUid}`)
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('lgd_name').innerHTML = data['lgd_name'];
+            document.getElementById('lgd_named').innerHTML = data['lgd_name'];
+        });
+
+    fetch(`/api/pd-by-gnd/${gndUid}`)
+        .then(res => res.json())
+        .then(data => {
+            const pdNames = data['pd_names'].map(pd => pd.pd_name).join(', ');
+            document.getElementById('pd_name').innerHTML = pdNames;
+            document.getElementById('pd_named').innerHTML = pdNames;
+        })
 });

@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\DivisionalSecretariat;
 use App\Models\GramaNiladariDivision;
 use App\Models\District;
+use App\Models\PollingDivision;
+use App\Models\LGDHasGND;
+use App\Models\PDHasGND;
+use App\Models\LocalGovernmentDivision;
 
 use Illuminate\Http\Request;
 
@@ -35,5 +39,19 @@ class BasicInfoController extends Controller
         $d_name = District::where('d_code', $d_code)->value('d_name');
 
         return response()->json(['d_name' => $d_name]);
+    }
+
+    public function getLGDNameByGND($gnd_uid)
+    {
+        $lgd_name = LocalGovernmentDivision::where('lgd_uid', LGDHasGND::where('gnd_uid', $gnd_uid)->value('lgd_uid'))->value('lgd_name');
+
+        return response()->json(['lgd_name' => $lgd_name]);
+    }
+
+    public function getPDNameByGND($gnd_uid) {
+        $pd_codes = PDHasGND::where('gnd_uid', $gnd_uid)->pluck('pd_code');
+        $pd_names = PollingDivision::whereIn('pd_code', $pd_codes)->get(['pd_name']);
+
+        return response()->json(['pd_names' => $pd_names]);
     }
 }

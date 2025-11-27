@@ -15,21 +15,30 @@ class GovFigureController extends Controller
 
     public function insertGovernmentFigure(Request $request)
     {
-        $validatedData = $request->validate([
-            'gf_name' => 'required|string|max:255',
-            'gf_type' => 'required|string|max:255',
-            'gf_address' => 'required|string|max:255',
-            'gnd_uid' => 'required|string|max:255',
-        ]);
+        try {
+            $request->validate([
+                'gf_name' => 'required|string|max:255',
+                'gf_type' => 'required|string|max:255',
+                'gf_address' => 'required|string|max:255',
+            ]);
 
-        $gf = new GovermentFigure();
-        $gf->gf_name = $validatedData['gf_name'];
-        $gf->gf_type = $validatedData['gf_type'];
-        $gf->gf_address = $validatedData['gf_address'];
-        $gf->gnd_uid = $validatedData['gnd_uid'];
-        $gf->save();
+            $gov_figure = new GovermentFigure();
+            $gov_figure->gf_name = $request->gf_name;
+            $gov_figure->gf_type = $request->gf_type;
+            $gov_figure->gf_address = $request->gf_address;
+            $gov_figure->gnd_uid = $request->gnd_uid;
+            $gov_figure->save();
 
-        return response()->json(['success' => true]);
+            return response()->json([
+                'success' => true,
+                'message' => 'Government Figure added successfully.'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'error' => $e->getMessage()
+            ]);
+        }
     }
 
     public function deleteGovernmentFigure($gf_id) {

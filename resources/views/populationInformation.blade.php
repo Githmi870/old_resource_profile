@@ -128,23 +128,23 @@
                     <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">4 විදේශගත ජනගහනය</h2>
                     <form action="" method="post"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
-                        <form id="waterSourceForm" class="space-y-4">
+                        <form id="foreignSourceForm" class="space-y-4">
                             @csrf
 
                             <div class="mb-6">
-                                <label for="source_name"
+                                <label for="total_population"
                                     class="block font-medium text-sm text-gray-700 dark:text-gray-300">මුළු ජනගහනය
                                     :</label>
-                                <input type="text" id="source_name" name="source_name" required
+                                <input type="text" id="total_population" name="total_population" required
                                     class="mt-1 block w-80 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                             </div>
 
                             <div class="mb-6">
-                                <label for="source_name"
+                                <label for="foreign_population"
                                     class="block font-medium text-sm text-gray-700 dark:text-gray-300">විදේශගත මුළු
                                     පුද්ගලයින් ගණන
                                     :</label>
-                                <input type="text" id="source_name" name="source_name" required
+                                <input type="text" id="foreign_population" name="foreign_population" required
                                     class="mt-1 block w-80 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                             </div>
 
@@ -170,7 +170,7 @@
                                     පුද්ගලයින් ගණන</th>
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody id="populationSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -184,24 +184,24 @@
                     </h2>
                     <form action="" method="post"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
-                        <form id="waterSourceForm" class="space-y-4">
+                        <form id="familySourceForm" class="space-y-4">
                             @csrf
 
                             <div class="mb-6">
-                                <label for="source_name"
+                                <label for="family_count"
                                     class="block font-medium text-sm text-gray-700 dark:text-gray-300">මුළු පවුල්
                                     සංඛ්‍යාව/ගෘහ කාණ්ඩ සංඛ්‍යාව
                                     :</label>
-                                <input type="text" id="source_name" name="source_name" required
+                                <input type="text" id="family_count" name="family_count" required
                                     class="mt-1 block w-80 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                             </div>
 
                             <div class="mb-6">
-                                <label for="source_name"
+                                <label for="home_headed_count"
                                     class="block font-medium text-sm text-gray-700 dark:text-gray-300">කාන්තා ගෘහමූලික
                                     පවුල් සංඛ්‍යාව/ගෘහ කාණ්ඩ සංඛ්‍යාව
                                     :</label>
-                                <input type="text" id="source_name" name="source_name" required
+                                <input type="text" id="home_headed_count" name="home_headed_count" required
                                     class="mt-1 block w-80 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                             </div>
 
@@ -226,7 +226,7 @@
                                 <th class="px-4 py-2 border">කාන්තා ගෘහමූලික පවුල් සංඛ්‍යාව/ගෘහ කාණ්ඩ සංඛ්‍යාව</th>
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody id="homeSourceTableBody">
                         </tbody>
                     </table>
                 </div>

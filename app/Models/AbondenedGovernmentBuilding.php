@@ -7,7 +7,12 @@ use App\Models\GramaNiladariDivision;
 
 class AbondenedGovernmentBuilding extends Model
 {
-    protected $fillable = ['ab_name', 'ab_used_for', 'ab_is_retrievable'];
+    protected $fillable = [
+        'ab_name',
+        'ab_used_for',
+        'ab_is_retrievable',
+        'normalized_name',
+    ];
     public $timestamps = false;
 
     public function gnd() {

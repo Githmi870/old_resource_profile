@@ -5,7 +5,7 @@
         ['route' => 'env', 'label' => 'පාරිසරික තොරතුරු'],
         ['route' => 'pop', 'label' => 'ජනගහන තොරතුරු'],
         ['route' => 'hou', 'label' => 'නිවාස තොරතුරු'],
-        ['route' => 'dashboard', 'label' => 'Question 5'],
+        ['route' => 'sev', 'label' => 'සේවා නියුක්තිය'],
         ['route' => 'edu', 'label' => 'අධ්‍යාපන තොරතුරු'],
         ['route' => 'reg', 'label' => 'ආගමික හා සංස්කෘතික කටයුතු'],
         ['route' => 'hea', 'label' => 'සෞඛ්‍ය තොරතුරු'],
@@ -13,7 +13,7 @@
         ['route' => 'infras', 'label' => 'යටිතල පහසුකම්'],
         ['route' => 'soc', 'label' => 'සමාජ සුභසාධන'],
         ['route' => 'com', 'label' => 'ප්‍රජාමූල තොරතුරු'],
-        ['route' => 'dashboard', 'label' => 'Question 13'],
+        ['route' => 'dashboard', 'label' => 'වෙනත්'],
     ];
 @endphp
 

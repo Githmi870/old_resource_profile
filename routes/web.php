@@ -15,6 +15,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/admin', function (){
+    return view('AdminPage');
+})->name('admin');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -44,6 +48,10 @@ Route::get('/pop', function () {
 Route::get('/hou', function () {
     return view('houseInformation');
 })->name('hou');
+
+Route::get('/sev', function () {
+    return view('serviceEmployee');
+})->name('sev');
 
 Route::get('/hea', function () {
     return view('healthInformation');

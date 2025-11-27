@@ -16,6 +16,11 @@ class DatabaseSeeder extends Seeder
             DistrictSeeder::class,
             DivisionalSecretariatSeeder::class,
             GramaNiladariDivisionSeeder::class,
+            LGDSeeder::class,
+            GNDHasLGDSeeder::class,
+            PDSeeder::class,
+            PDHasGNDSeeder::class,
+            UserSeeder::class,
         ]);
 
     }

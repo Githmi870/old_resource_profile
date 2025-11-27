@@ -6,7 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class GovermentFigure extends Model
 {
-    protected $fillable = ['gf_name', 'gf_type', 'gf_address'];
+    protected $fillable = [
+        'gf_name',
+        'gf_type',
+        'gf_address',
+        'normalized_name'
+    ];
+    
     public $timestamps = false;
 
 
