@@ -14,15 +14,22 @@
                             <table class="shadow-md border rounded-lg w-full">
                                 <thead>
                                     <tr>
-                                        <th class="px-4 py-2 border" rowspan="2"> </th>
-                                        <th class="px-4 py-2 border" rowspan="2">පන්සල්/ විහාරස්ථාන සංඛ්‍යාව</th>
-                                        <th class="px-4 py-2 border" rowspan="2">කෝවිල් සංඛ්‍යාව</th>
-                                        <th class="px-4 py-2 border" colspan="2">පල්ලි සංඛ්‍යාව</th>
-                                        <th class="px-4 py-2 border" rowspan="2">වෙනත්</th>
+                                        <th class="px-4 py-2 border" rowspan="4"> </th>
+                                        <th class="px-4 py-2 border" rowspan="2">පන්සල්/ ආරණ්‍ය/ විහාරස්ථාන/ අසපු </th>
+                                        <th class="px-4 py-2 border" rowspan="2">මෙ‍හෙනි ආරාම</th>
+                                        <th class="px-4 py-2 border" rowspan="2">ඉස්ලාම් ආරාම</th>
+                                        <th class="px-4 py-2 border" colspan="2">කතෝලික පල්ලි</th>
+                                        <th class="px-4 py-2 border" rowspan="2">කෝවිල්</th>
                                     </tr>
+                                     <tr>
+                                    </tr>  
                                     <tr>
-                                        <th class="px-4 py-2 border">මුස්ලිම්</th>
-                                        <th class="px-4 py-2 border">කතෝලික</th>
+                                        <th class="px-4 py-2 border" rowspan="2"> (භික්ෂුන් වහස්සේලා)</th>
+                                        <th class="px-4 py-2 border" rowspan="2"> (මෙහෙණින් වහස්සේලා)</th>
+                                        <th class="px-4 py-2 border" rowspan="2"> (මවුලවිතුමන්ලා)</th>
+                                        <th class="px-4 py-2 border" rowspan="2">(පියතුමන්ලා)</th>
+                                        <th class="px-4 py-2 border" rowspan="2">(කන්‍යා සොයුරියන්)</th>
+                                        <th class="px-4 py-2 border" rowspan="2"> (පූජකතුමන්ලා/ පූසාරි)</th>
                                     </tr>
                                     <tr>
                                         <td class="px-4 py-2 border">ඒකක ගණන</td>
@@ -35,11 +42,12 @@
 
                                     <tr>
                                         <td class="px-4 py-2 border">පුජ්‍ය පක්ෂ සංඛ්‍යාව</td>
-                                        <x-editable-table-cell>0</x-editable-table-cell>
-                                        <x-editable-table-cell>0</x-editable-table-cell>
-                                        <x-editable-table-cell>0</x-editable-table-cell>
-                                        <x-editable-table-cell>0</x-editable-table-cell>
-                                        <x-editable-table-cell>0</x-editable-table-cell>
+                                        <x-editable-table-cell> </x-editable-table-cell>
+                                        <x-editable-table-cell> </x-editable-table-cell>
+                                        <x-editable-table-cell> </x-editable-table-cell>
+                                        <x-editable-table-cell> </x-editable-table-cell>
+                                        <x-editable-table-cell> </x-editable-table-cell>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody class="text-center" id="waterSourceTableBody">
@@ -56,13 +64,13 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
 
-                    <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">2. ප්‍රදේශයේ ඇති පුජනීය ස්ථානයන්හි තොරතුරු
+                    <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">2. ප්‍රදේශයේ ඇති ආගමික ස්ථානයන්හි පුජනීය ස්ථානවන්හි නම්
                     </h2>
                     <form action="" method="post"
                         class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
                         <div>
                             <div>
-                                <label for="rel_name"
+                                <label for="school_name"
                                     class="block font-medium text-sm text-gray-700 dark:text-gray-300">පුජනීය ස්ථානයේ
                                     නම:</label>
                                 <input type="text" id="rel_name" name="rel_name" required
@@ -76,17 +84,18 @@
                                 <select id="rel_type" name="rel_type" required
                                     class="mt-1 block w-80 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                                     <option value="" disabled selected>පුජනීය ස්ථාන වර්ගයක් තෝරන්න</option>
-                                    <option value="ජාතික පාසල් ">විහාරස්ථාන </option>
-                                    <option value="1 AB උසස් පෙල විද්‍යා විෂයන් ඇති පාසල්"> කොවිල්
+                                    <option value="ජාතික පාසල් ">පන්සල්/ විහාරස්ථාන </option>
+                                    <option value="1 AB උසස් පෙල විද්‍යා විෂයන් ඇති පාසල්"> ආරණ්‍ය සේනාසන 
                                     </option>
-                                    <option value="1 C උසස් පෙල කලා/ වාණිජ විෂයන් ඇති පාසල්">පල්ලි
+                                    <option value="1 C උසස් පෙල කලා/ වාණිජ විෂයන් ඇති පාසල්"> අසපුව 
                                     </option>
-                                    <option value="1-11 ශ්‍රේණිය දක්වා පන්ති පවත්වන පාසල්"> ආරණ්‍ය සේනාසන
+                                    <option value="1-11 ශ්‍රේණිය දක්වා පන්ති පවත්වන පාසල්"> භාවනා මධ්‍යස්ථාන
                                     </option>
-                                    <option value="ප්‍රාථමික පාසල්"> අසපු</option>
-                                    <option value="ප්‍රාථමික පාසල්"> මෙහෙනි ආරාම</option>
-                                    <option value="ප්‍රාථමික පාසල්"> භාවනා මධ්‍යස්ථාන</option>
-
+                                    <option value="ප්‍රාථමික පාසල්"> මෙහෙනි ආරාම </option>
+                                    <option value="ප්‍රාථමික පාසල්"> පල්ලි - ඉස්ලාම් පල්ලි</option>
+                                    <option value="ප්‍රාථමික පාසල්"> කතෝලික පල්ලි</option>
+                                    <option value="ප්‍රාථමික පාසල්"> කොවිල්</option>
+                                    <option value="ප්‍රාථමික පාසල්"> දේවාල</option>
                                 </select>
                             </div><br>
 
@@ -188,8 +197,13 @@
                             <select id="famous_type" name="famous_type" required
                                 class="mt-1 block w-80 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                                 <option value="" disabled selected>ප්‍රසිද්ධ කලා ක්ෂේත්‍රය තෝරන්න</option>
+                                <option value="ජාතික පාසල් "> ලේඛකයන්</option>
+                                <option value="ජාතික පාසල් "> කව්යන්</option>
+                                <option value="ජාතික පාසල් ">වියතුන් </option>
                                 <option value="ජාතික පාසල් ">බලි තොව්ල් </option>
                                 <option value="1 AB උසස් පෙල විද්‍යා විෂයන් ඇති පාසල්"> රූකඩ නැටුම් </option>
+                                <option value="ජාතික පාසල් ">චිත්‍ර ශිල්පින් </option>
+                                <option value="ජාතික පාසල් "> බෙර වාදන ශිල්පින් </option>
                                 <option value="1 C උසස් පෙල කලා/ වාණිජ විෂයන් ඇති පාසල්">විවිධ සංස්කෘතිකාංග </option>
 
                             </select>
