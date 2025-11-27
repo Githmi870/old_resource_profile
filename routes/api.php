@@ -6,6 +6,7 @@ use App\Http\Controllers\BasicInfoController;
 use App\Http\Controllers\GovFigureController;
 use App\Http\Controllers\AbondenedBuildingController;
 use App\Http\Controllers\AbondenedProjectController;
+use App\Http\Controllers\PHController;
 
 //Register API routes for fetching location and basic info names
 Route::get('/api/ds-by-district/{d_code}', [LocationController::class, 'getDS']);
@@ -31,3 +32,5 @@ Route::delete('/api/delete-agb/{ab_id}', [AbondenedBuildingController::class, 'd
 Route::get('/api/get-ap/{gnd_uid}', [AbondenedProjectController::class, 'getAbondenedProjects']);
 Route::post('/api/insert-ap/{gnd_uid}', [AbondenedProjectController::class, 'addAbondenedProject']);
 Route::delete('/api/delete-ap/{ap_id}', [AbondenedProjectController::class, 'deleteAbondenedProject']);
+
+Route::get('/api/insert-ph', [PHController::class, 'insertPh']);
