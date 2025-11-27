@@ -17,7 +17,7 @@ document.getElementById('ds_id').addEventListener('change', function () {
             const gndSelect = document.getElementById('gnd_uid');
             gndSelect.innerHTML = '<option value="" disabled selected>-- Select Grama Niladari Division --</option>';
             data.forEach(gnd => {
-                gndSelect.innerHTML += `<option value="${gnd.gnd_uid}">${gnd.gnd_name} (${gnd.gnd_uid})</option>`;
+                gndSelect.innerHTML += `<option value="${gnd.gnd_uid}">${gnd.gnd_name} (${gnd.gnd_number})</option>`;
             });
         });
 });
