@@ -71,7 +71,7 @@
 
                             </tr>
                         </thead>
-                        <tbody id="roadSourceTableBody">
+                        <tbody class="text-center" id="roadSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -126,7 +126,7 @@
 
                                 </tr>
                             </thead>
-                            <tbody id="bridgeSourceTableBody">
+                            <tbody class="text-center" id="bridgeSourceTableBody">
                             </tbody>
                         </table>
                     </div>
@@ -181,7 +181,7 @@
 
                                     </tr>
                                 </thead>
-                                <tbody id="newBridgeSourceTableBody">
+                                <tbody class="text-center" id="newBridgeSourceTableBody">
                                 </tbody>
                             </table>
                         </div>
@@ -245,7 +245,7 @@
                                         <th class="px-5 py-2 border">පවුල් සංඛ්‍යාව</th>
                                     </tr>
                                 </thead>
-                                <tbody id="transortSourceTableBody">
+                                <tbody class="text-center" id="transortSourceTableBody">
                                 </tbody>
                             </table>
                         </div>
@@ -294,7 +294,7 @@
 
                                 </tr>
                             </thead>
-                            <tbody id="telecomSourceTableBody">
+                            <tbody class="text-center" id="telecomSourceTableBody">
                             </tbody>
                         </table>
                     </div>
@@ -340,7 +340,7 @@
 
                                 </tr>
                             </thead>
-                            <tbody id="fillingSourceTableBody">
+                            <tbody class="text-center" id="fillingSourceTableBody">
                             </tbody>
                         </table>
                     </div>
@@ -387,7 +387,7 @@
 
                                 </tr>
                             </thead>
-                            <tbody id="hydroSourceTableBody">
+                            <tbody class="text-center" id="hydroSourceTableBody">
                             </tbody>
                         </table>
                     </div>
@@ -441,7 +441,7 @@
 
                                 </tr>
                             </thead>
-                            <tbody id="bankSourceTableBody">
+                            <tbody class="text-center" id="bankSourceTableBody">
                             </tbody>
                         </table>
                     </div>
@@ -485,7 +485,7 @@
 
                             </tr>
                         </thead>
-                        <tbody id="gnSourceTableBody">
+                        <tbody class="text-center" id="gnSourceTableBody">
                         </tbody>
                     </table>
                 </div>

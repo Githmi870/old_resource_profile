@@ -39,7 +39,7 @@
 
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody class="text-center" id="waterSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -98,7 +98,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody class="text-center" id="waterSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -158,7 +158,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody class="text-center" id="waterSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -217,7 +217,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody class="text-center" id="waterSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -276,7 +276,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody class="text-center" id="waterSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -335,7 +335,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody class="text-center" id="waterSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -394,7 +394,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody class="text-center" id="waterSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -453,7 +453,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody class="text-center" id="waterSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -512,7 +512,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody class="text-center" id="waterSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -571,7 +571,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody class="text-center" id="waterSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -630,7 +630,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody class="text-center" id="waterSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -689,7 +689,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody class="text-center" id="waterSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -748,7 +748,7 @@
                                 <th class="px-4 py-2 border">සමාජික සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody id="waterSourceTableBody">
+                        <tbody class="text-center" id="waterSourceTableBody">
                         </tbody>
                     </table>
                 </div>

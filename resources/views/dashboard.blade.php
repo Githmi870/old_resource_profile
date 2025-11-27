@@ -50,7 +50,7 @@
                                             <th class="px-4 py-2 border">මහවැලි කොට්ඨාශය</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <tr class="text-center">
                                             <td class="px-4 py-2 border" id="gnd_numberd"></td>
                                             <td class="px-4 py-2 border" id="gnd_named"></td>

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('snz_name');
             $table->string('snz_importance');
             $table->string('normalized_name')->nullable()->index();
+            $table->timestamps();
         });
     }
 

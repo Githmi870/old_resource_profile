@@ -11,8 +11,6 @@ class SNZHasGND extends Model
         'gnd_uid',
     ];
 
-    public $timestamps = false;
-
     public function sensitiveNatureZone()
     {
         return $this->belongsToMany(SensitiveNatureZone::class, 'snz_id', 'snz_id');

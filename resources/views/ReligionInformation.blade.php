@@ -50,7 +50,7 @@
                                         
                                     </tr>
                                 </thead>
-                                <tbody id="waterSourceTableBody">
+                                <tbody class="text-center" id="waterSourceTableBody">
                                 </tbody>
                             </table>
                         </div>
@@ -123,7 +123,7 @@
                                 <th class="px-4 py-2 border"> සුවිශේෂි විමට හේතු </th>
                             </tr>
                         </thead>
-                        <tbody id="privateSchoolTableBody">
+                        <tbody class="text-center" id="privateSchoolTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -172,7 +172,7 @@
                                 <th class="px-4 py-2 border"> සිසුන් ගණන </th>
                             </tr>
                         </thead>
-                        <tbody id="privateSchoolTableBody">
+                        <tbody class="text-center" id="privateSchoolTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -232,7 +232,7 @@
                                 <th class="px-4 py-2 border"> බිහිවූ කලාකරුවන් </th>
                             </tr>
                         </thead>
-                        <tbody id="privateSchoolTableBody">
+                        <tbody class="text-center" id="privateSchoolTableBody">
                         </tbody>
                     </table>
                 </div>

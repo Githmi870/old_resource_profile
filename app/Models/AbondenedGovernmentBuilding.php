@@ -13,7 +13,6 @@ class AbondenedGovernmentBuilding extends Model
         'ab_is_retrievable',
         'normalized_name',
     ];
-    public $timestamps = false;
 
     public function gnd() {
         return $this->belongsTo(GramaNiladariDivision::class,'gnd_uid', 'gnd_uid');

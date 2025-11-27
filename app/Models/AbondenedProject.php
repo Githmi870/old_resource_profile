@@ -7,7 +7,6 @@ use App\Models\GramaNiladariDivision;
 
 class AbondenedProject extends Model
 {
-    public $timestamps = false;
     protected $fillable = [
         'ap_id',
         'ap_name',

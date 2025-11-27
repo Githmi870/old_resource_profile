@@ -8,12 +8,25 @@ use App\Http\Controllers\AbondenedBuildingController;
 use App\Http\Controllers\AbondenedProjectController;
 use App\Http\Controllers\WaterResourceController;
 use App\Http\Controllers\SNZController;
+use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\Admin\UserManagementController;
+use \App\Http\Controllers\NDController;
+use \App\Http\Controllers\GHController;
+use App\Http\Controllers\SPController;
+use App\Http\Controllers\TDController;
 
 //Register API routes for fetching location and basic info names
 Route::get('/api/ds-by-district/{d_code}', [LocationController::class, 'getDS']);
 Route::get('/api/gnd-by-ds/{ds_id}', [LocationController::class, 'getGND']);
 
 Route::middleware('auth')->group(function () {
+    //Admin routes
+    Route::get('/api/get-users', [UserManagementController::class, 'index']);
+    Route::post('/api/apr-user/{user}', [UserManagementController::class, 'approve']);
+    Route::post('/api/rej-user/{user}', [UserManagementController::class, 'reject']);
+    Route::post('/api/deny-all', [UserManagementController::class, 'denyAll']);
+    Route::post('/api/approve-all', [UserManagementController::class, 'approveAll']);
+
     //Dashboard info routes
     Route::get('/api/gnd-by-uid/{gnd_uid}', [BasicInfoController::class, 'getGNDName']);
     Route::get('/api/ds-by-gnd/{gnd_uid}', [BasicInfoController::class, 'getDSNameByGND']);
@@ -40,14 +53,32 @@ Route::middleware('auth')->group(function () {
     //Water Sources routes
     Route::post('/api/insert-wr/{gnd_uid}', [WaterResourceController::class, 'insertWaterResource']);
     Route::get('/api/get-wr/{gnd_uid}', [WaterResourceController::class, 'getWaterResources']);
-    Route::delete('/api/delete-wr/{wr_id}', [WaterResourceController::class, 'deleteWaterResource']);
+    Route::delete('/api/delete-wr/{wr_id}/{gnd_uid}', [WaterResourceController::class, 'deleteWaterResource']);
 
     //SNZ routes
     Route::get('/api/get-snz/{gnd_uid}', [SNZController::class, 'getSNZ']);
     Route::post('/api/insert-snz/{gnd_uid}', [SNZController::class, 'insertSNZ']);
-    Route::delete('/api/delete-snz/{snz_id}', [SNZController::class, 'deleteSNZ']);
-});
+    Route::delete('/api/delete-snz/{snz_id}/{gnd_uid}', [SNZController::class, 'deleteSNZ']);
 
-Route::get('/api/get-users', [App\Http\Controllers\Admin\UserManagementController::class, 'index']);
-Route::post('/api/apr-user/{user}', [App\Http\Controllers\Admin\UserManagementController::class, 'approve']);
-Route::post('/api/rej-user/{user}', [App\Http\Controllers\Admin\UserManagementController::class, 'reject']);
+    //Resource Routes
+    Route::get('/api/get-resources/{gnd_uid}', [ResourceController::class, 'getResources']);
+    Route::post('/api/insert-resource/{gnd_uid}', [ResourceController::class, 'insertResource']);
+    Route::delete('/api/delete-resource/{r_id}/{gnd_uid}', [ResourceController::class, 'deleteResource']);
+
+    //ND Routes
+    Route::get('/api/get-nd-list', [NDController::class, 'getNDList']);
+    Route::get('/api/get-nd/{gnd_uid}', [NDController::class, 'getND']);
+    Route::post('/api/insert-nd/{gnd_uid}', [NDController::class, 'insertND']);
+    Route::delete('/api/delete-nd/{nd_id}/{gnd_uid}', [NDController::class, 'deleteND']);
+
+    Route::get('/api/get-sp/{gnd_uid}', [SPController::class, 'getSP']);
+    Route::post('/api/insert-sp/{gnd_uid}', [SPController::class, 'insertSP']);
+    Route::delete('/api/delete-sp/{sp_id}/{gnd_uid}', [SPController::class, 'deleteSP']);
+
+    Route::get('/api/get-td/{gnd_uid}', [TDController::class, 'getTD']);
+    Route::post('/api/insert-td/{gnd_uid}', [TDController::class, 'insertTD']);
+    Route::delete('/api/delete-td/{td_id}/{gnd_uid}', [TDController::class, 'deleteTD']);
+
+    Route::get('/api/get-gh', [GHController::class, 'getGH']);
+    Route::post('/api/insert-gh', [GHController::class, 'insertGH']);
+});

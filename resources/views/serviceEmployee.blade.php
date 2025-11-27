@@ -47,7 +47,7 @@
                         <x-editable-table-cell></x-editable-table-cell>
                                     </tr>
                                 </thead>
-                                <tbody id="serviceSourceTableBody">
+                                <tbody class="text-center" id="serviceSourceTableBody">
                                 </tbody>
                             </table>
                             <br>

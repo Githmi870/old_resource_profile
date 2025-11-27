@@ -112,7 +112,7 @@
                                 <x-editable-table-cell> </x-editable-table-cell>
                             </tr>
                         </thead>
-                        <tbody id="economicSourceTableBody">
+                        <tbody class="text-center" id="economicSourceTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -184,7 +184,7 @@
                                 <th class="px-4 py-2 border"> භුමි ප්‍රමාණය (හෙක්ටයාර්) </th>
                             </tr>
                         </thead>
-                        <tbody id="landTableBody">
+                        <tbody class="text-center" id="landTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -243,7 +243,7 @@
                                 <th class="px-4 py-2 border">පුද්ගලයින් ගණන</th>
                             </tr>
                         </thead>
-                        <tbody id="cultivationTableBody">
+                        <tbody class="text-center" id="cultivationTableBody">
                         </tbody>
                     </table>
                     <br> 
@@ -314,7 +314,7 @@
 
                             </tr>
                         </thead>
-                        <tbody id="naturalTableBody">
+                        <tbody class="text-center" id="naturalTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -356,7 +356,7 @@
                                 <th class="px-4 py-2 border"> විශේෂිත බෝග වර්ග</th>
                             </tr>
                         </thead>
-                        <tbody id="specialPlantTableBody">
+                        <tbody class="text-center" id="specialPlantTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -424,7 +424,7 @@
                                     ම‍ාර්ග</th>
                             </tr>
                         </thead>
-                        <tbody id="fieldTableBody">
+                        <tbody class="text-center" id="fieldTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -564,7 +564,7 @@
                             </tr>
 
                         </thead>
-                        <tbody id="vehicleTableBody">
+                        <tbody class="text-center" id="vehicleTableBody">
                         </tbody>
                     </table>
                     <br>
@@ -633,7 +633,7 @@
                                 <th class="px-4 py-2 border">ඇත/නැත</th>
                             </tr>
                         </thead>
-                        <tbody id="damageTableBody">
+                        <tbody class="text-center" id="damageTableBody">
                         </tbody>
                     </table>
                     <br>
@@ -741,7 +741,7 @@
                                 <th class="px-4 py-2 border">කර්මාන්ත ආයතන සංඛාව</th>
                             </tr>
                         </thead>
-                        <tbody id="industriesTableBody">
+                        <tbody class="text-center" id="industriesTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -802,7 +802,7 @@
                             
                            
                         </thead>
-                        <tbody id="factoryTableBody">
+                        <tbody class="text-center" id="factoryTableBody">
                         </tbody>
                     </table>
                     <br>
@@ -865,7 +865,7 @@
                                 <th class="px-4 py-2 border"> මුළු කර්මාන්තශාලා ගණන</th>
                             </tr>
                         </thead>
-                        <tbody id="factTableBody">
+                        <tbody class="text-center" id="factTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -917,7 +917,7 @@
                            
                            
                         </thead>
-                        <tbody id="fishlTableBody">
+                        <tbody class="text-center" id="fishlTableBody">
                         </tbody>
                     </table><BR>
                     <P> ප්‍රධාන ආදායම් මාර්ගය ධීවර කර්මාන්තයව වීම.</P>
@@ -982,7 +982,7 @@
                                 <th class="px-4 py-2 border"> ධීවර සමිතියේ ලිපිනය</th>
                             </tr>
                         </thead>
-                        <tbody id="urineFishTableBody">
+                        <tbody class="text-center" id="urineFishTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -1061,7 +1061,7 @@
                            
                            
                         </thead>
-                        <tbody id="freshwaterTableBody">
+                        <tbody class="text-center" id="freshwaterTableBody">
                         </tbody>
                     </table>
                     <br>
@@ -1125,7 +1125,7 @@
                                 <th class="px-4 py-2 border"> ධීවර සමිතියේ ලිපිනය</th>
                             </tr>
                         </thead>
-                        <tbody id="onFishTableBody">
+                        <tbody class="text-center" id="onFishTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -1169,7 +1169,7 @@
 
                             </tr>
                         </thead>
-                        <tbody id="domainFreshTableBody">
+                        <tbody class="text-center" id="domainFreshTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -1364,7 +1364,7 @@
                             
                            
                         </thead>
-                        <tbody id="hotelTableBody">
+                        <tbody class="text-center" id="hotelTableBody">
                         </tbody>
                     </table>
                     <br>

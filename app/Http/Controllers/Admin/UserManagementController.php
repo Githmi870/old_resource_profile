@@ -24,4 +24,12 @@ class UserManagementController extends Controller
     {
         return response()->json(User::where('id', $user)->update(['status' => 'denied']));
     }
+
+    public function denyAll() {
+        return response()->json(User::query()->update(['status' => 'denied']));
+    }
+
+    public function approveAll() {
+        return response()->json(User::query()->update(['status' => 'approved']));
+    }
 }

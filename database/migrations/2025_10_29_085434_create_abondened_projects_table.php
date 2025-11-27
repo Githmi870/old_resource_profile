@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('ap_reason');
             $table->string('gnd_uid');
             $table->foreign('gnd_uid')->references('gnd_uid')->on('grama_niladari_divisions')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

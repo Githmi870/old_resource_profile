@@ -2,33 +2,15 @@
     @vite ('resources/js/pages/reg_con.js')
     <form method="POST" action="{{ route('register') }}">
         @csrf
-
-        <!-- District -->
-        <div class="mb-5">
-            <x-input-label for="d_code" :value="__('District')" />
-            <select name="d_code" id="d_code" class="block mt-1 w-full border rounded-lg border-gray-300" required>
-                <option value="" selected disabled>-- Select District --</option>
-                @foreach(\App\Models\District::all() as $d)
-                <option value="{{ $d->d_code }}">{{ $d->d_name }} ({{ $d->d_code }})</option>
+        <div>
+            <x-input-label for="gnd_uid">Grama Niladari Division</x-input-label>
+            <x-text-input name="gnd_uid" id="gnd_uid" list="gndList" class="block mt-1 w-full" placeholder="Search here with your gnd number..(ex: 176B)"></x-text-input>
+            <datalist id="gndList">
+                @foreach(\App\Models\GramaNiladariDivision::all() as $gnd)
+                <option value="{{ $gnd->gnd_uid }}">{{ $gnd->gnd_name }} - {{ $gnd->gnd_number }}</option>
                 @endforeach
-            </select>
-            <x-input-error :messages="$errors->get('d_code')" class="mt-2" />
-        </div>
-
-        <!-- DS -->
-        <div class="mb-5">
-            <x-input-label for="ds_id" :value="__('Divisional Secretariat')" />
-            <select name="ds_id" id="ds_id" class="block mt-1 w-full border rounded-lg border-gray-300" required>
-                <option value="" selected disabled>-- Select Divisional Secretariat --</option>
-            </select>
-        </div>
-
-        <!-- GND -->
-        <div class="mb-5">
-            <x-input-label for="gnd_uid" :value="__('Grama Niladari Division')" />
-            <select name="gnd_uid" id="gnd_uid" class="block mt-1 w-full border rounded-lg border-gray-300" required>
-                <option value="" selected disabled>-- Select Grama Niladari Division --</option>
-            </select>
+            </datalist>
+            <x-input-error :messages="$errors->get('gnd_uid')" class="mt-2" />
         </div>
 
         <!-- Occupation -->

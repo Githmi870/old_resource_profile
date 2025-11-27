@@ -152,7 +152,7 @@
 
                             </tr>
                         </thead>
-                        <tbody id="facilityTableBody">
+                        <tbody class="text-center" id="facilityTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -222,7 +222,7 @@
 
                             </tr>
                         </thead>
-                        <tbody id="lastSchoolTableBody">
+                        <tbody class="text-center" id="lastSchoolTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -297,7 +297,7 @@
                                 <th class="px-4 py-2 border">සිසුන් ගණන</th>
                             </tr>
                         </thead>
-                        <tbody id="privateSchoolTableBody">
+                        <tbody class="text-center" id="privateSchoolTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -382,7 +382,7 @@
                                 <th class="px-4 py-2 border">සිසුන් ගණන</th>
                             </tr>
                         </thead>
-                        <tbody id="pirivenTableBody">
+                        <tbody class="text-center" id="pirivenTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -431,7 +431,7 @@
                                 <th class="px-4 py-2 border">කාර්මික හා වෘත්තීය පුහුණු ආයතන</th>
                             </tr>
                         </thead>
-                        <tbody id="tecTableBody">
+                        <tbody class="text-center" id="tecTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -499,7 +499,7 @@
                                 <th class="px-4 py-2 border">සිසුන් ගණන</th>
                             </tr>
                         </thead>
-                        <tbody id="preSchoolTableBody">
+                        <tbody class="text-center" id="preSchoolTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -579,7 +579,7 @@
                                 <th class="px-4 py-2 border">සිසුන් ගණන</th>
                             </tr>
                         </thead>
-                        <tbody id="dhammaSchoolTableBody">
+                        <tbody class="text-center" id="dhammaSchoolTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -629,7 +629,7 @@
 
                             </tr>
                         </thead>
-                        <tbody id="classTableBody">
+                        <tbody class="text-center" id="classTableBody">
                         </tbody>
                     </table>
                 </div>
