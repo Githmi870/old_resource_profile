@@ -38,7 +38,7 @@
                             </tr>
                             <tr>
                                 <td class="px-4 py-2 border">5</td>
-                                <td class="px-4 py-2 border">පෙර පාසල්</td>
+                                <td class="px-4 py-2 border">  ලියාපදිංචි පෙර පාසල් </td>
                                 <td class="px-4 py-2 border"> </td>
                             </tr>
                             <tr>
@@ -215,7 +215,7 @@
                     <table class="shadow-md border rounded-lg w-full">
                         <thead>
                             <tr>
-                               
+
                                 <th class="px-4 py-2 border"> පාසලේ නම </th>
                                 <th class="px-4 py-2 border"> වැසිගිය වර්ශය </th>
                                 <th class="px-4 py-2 border"> පවතින ගොඩනැගිලි සංඛ්‍යාව</th>
@@ -291,7 +291,7 @@
                     <table class="shadow-md border rounded-lg w-full">
                         <thead>
                             <tr>
-                                
+
                                 <th class="px-4 py-2 border">පාසලේ නම</th>
                                 <th class="px-4 py-2 border">ගුරුවරු ගණන</th>
                                 <th class="px-4 py-2 border">සිසුන් ගණන</th>
@@ -375,7 +375,7 @@
                     <table class="shadow-md border rounded-lg w-full">
                         <thead>
                             <tr>
-                               
+
                                 <th class="px-4 py-2 border">පාසලේ නම</th>
                                 <th class="px-4 py-2 border">පිරිවෙන් වර්ගය</th>
                                 <th class="px-4 py-2 border">ගුරුවරු ගණන</th>
@@ -427,7 +427,7 @@
                     <table class="shadow-md border rounded-lg w-full">
                         <thead>
                             <tr>
-                               
+
                                 <th class="px-4 py-2 border">කාර්මික හා වෘත්තීය පුහුණු ආයතන</th>
                             </tr>
                         </thead>
@@ -493,7 +493,7 @@
                     <table class="shadow-md border rounded-lg w-full">
                         <thead>
                             <tr>
-                                
+
                                 <th class="px-4 py-2 border">පෙර පාසලේ නම සහ ලිපිනය</th>
                                 <th class="px-4 py-2 border">ගුරුවරු ගණන</th>
                                 <th class="px-4 py-2 border">සිසුන් ගණන</th>
@@ -572,7 +572,7 @@
                     <table class="shadow-md border rounded-lg w-full">
                         <thead>
                             <tr>
-                                
+
                                 <th class="px-4 py-2 border">දහම් පාසලේ නම</th>
                                 <th class="px-4 py-2 border">දහම් පාසල අයත් ශාසනාරක්ෂක බල මණ්ඩලය </th>
                                 <th class="px-4 py-2 border">ගුරුවරු ගණන</th>
@@ -624,7 +624,7 @@
                     <table class="shadow-md border rounded-lg w-full">
                         <thead>
                             <tr>
-                                
+
                                 <th class="px-4 py-2 border">උපකාරක පන්ති ආයතනයන්හි නම</th>
 
                             </tr>
