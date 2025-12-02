@@ -37,13 +37,27 @@
                             </tr>
                             <tr>
                                 <td class="px-4 py-2 border">4</td>
+                                <th class="px-4 py-2 border" colspan="2" style="text-align: left;"> විශේෂඥ වෛද්‍ය සේවා ලබාගතහැකි ආයතන සංඛ්‍යාව (චැනලින් සෙන්ටර්)
+                                    </td>
+                                <x-editable-table-cell> </x-editable-table-cell>
+                            </tr>
+
+                            <tr>
+                                <td class="px-4 py-2 border">5</td>
                                 <th class="px-4 py-2 border" colspan="2" style="text-align: left;">සෞඛ්‍ය වෛද්‍ය
                                     නිළධාරි කාර්යාල/ග්‍රාමෝදය සෞඛ්‍ය මධ්‍යස්ථාන
                                     </td>
                                 <x-editable-table-cell>0</x-editable-table-cell>
                             </tr>
                             <tr>
-                                <td class="px-4 py-2 border" rowspan="2">5</td>
+                                <td class="px-4 py-2 border">6</td>
+                                <th class="px-4 py-2 border" colspan="2" style="text-align: left;"> පාරම්පරික සිංහල වෙදකම සිදුකරන ලියාපදිංචි ආයතන
+                                    </td>
+                                <x-editable-table-cell> </x-editable-table-cell>
+                            </tr>
+
+                            <tr>
+                                <td class="px-4 py-2 border" rowspan="2">7</td>
                                 <td class="px-4 py-2 border" rowspan="2">ෆාමසි/ඔසුසල් සංඛ්‍යාව</td>
                                 <td class="px-4 py-2 border">රජයේ ඔසුසල්</td>
                                <x-editable-table-cell>0</x-editable-table-cell>
@@ -92,7 +106,12 @@
                                 <select id="gh_type" name="gh_type" required
                                     class="mt-1 block w-80 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                                     <option value="" disabled selected>වර්ගය තෝරන්න</option>
-                                    <option value="අවු. 0-04">අවු.0-04</option>
+                                    <option value="ශික්ෂණ ‍රෝහල් - 1"> ශික්ෂණ ‍රෝහල් - 1</option>
+                                    <option value="මහා රෝහල් - 2"> මහා රෝහල් - 2</option>
+                                    <option value="මූලික රෝහල් - 3"> මූලික රෝහල් - 3</option>
+                                    <option value="ප්‍රාදේශීය රෝහල් - 4"> ප්‍රාදේශීය රෝහල් - 4</option>
+                                    <option value="ප්‍රාථමික සෞඛ්‍ය සත්කාර ඒකක - 5"> ප්‍රාථමික සෞඛ්‍ය සත්කාර ඒකක - 5</option>
+
 
 
                                 </select>
@@ -231,6 +250,113 @@
             </div>
         </div>
 
+         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8 mb-5">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
+                    <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">5 මතෘ සායන මධ්‍යස්ථාන</h2>
+                    <form action="" method="post"
+                        class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
+                        <form id="waterSourceForm" class="space-y-4">
+                            @csrf
+
+                            <div class="mb-6">
+                                <label for="source_name"
+                                    class="block font-medium text-sm text-gray-700 dark:text-gray-300">ආයතනයේ 
+                                    නම
+                                    :</label>
+                                <input type="text" id="source_name" name="source_name" required
+                                    class="mt-1 block w-80 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="source_name"
+                                    class="block font-medium text-sm text-gray-700 dark:text-gray-300">ලිපිනය
+                                    :</label>
+                                <input type="text" id="source_name" name="source_name" required
+                                    class="mt-1 block w-80 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                            </div>
+
+
+                            <br>
+                            <button type="submit"
+                                class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
+                                Insert
+                            </button>
+                        </form>
+                    </form>
+                </div>
+
+
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
+                    <table class="shadow-md border rounded-lg w-full">
+                        <thead>
+                            <tr>
+                                <th class="px-4 py-2 border">ID</th>
+                                <th class="px-4 py-2 border">ආයතනයේ නම</th>
+                                <th class="px-4 py-2 border">ලිපිනය</th>
+                            </tr>
+                        </thead>
+                        <tbody id="waterSourceTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8 mb-5">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
+                    <h2 class="text-xl font-semibold mb-4 dark:text-gray-200">6 සත්ව සායන මධ්‍යස්ථාන</h2>
+                    <form action="" method="post"
+                        class="max-w-2xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-md rounded-md text-left">
+                        <form id="waterSourceForm" class="space-y-4">
+                            @csrf
+
+                            <div class="mb-6">
+                                <label for="source_name"
+                                    class="block font-medium text-sm text-gray-700 dark:text-gray-300">ආයතනයේ 
+                                    නම
+                                    :</label>
+                                <input type="text" id="source_name" name="source_name" required
+                                    class="mt-1 block w-80 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="source_name"
+                                    class="block font-medium text-sm text-gray-700 dark:text-gray-300">ලිපිනය
+                                    :</label>
+                                <input type="text" id="source_name" name="source_name" required
+                                    class="mt-1 block w-80 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                            </div>
+
+
+                            <br>
+                            <button type="submit"
+                                class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
+                                Insert
+                            </button>
+                        </form>
+                    </form>
+                </div>
+
+
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
+                    <table class="shadow-md border rounded-lg w-full">
+                        <thead>
+                            <tr>
+                                <th class="px-4 py-2 border">ID</th>
+                                <th class="px-4 py-2 border">ආයතනයේ නම</th>
+                                <th class="px-4 py-2 border">ලිපිනය</th>
+                            </tr>
+                        </thead>
+                        <tbody id="waterSourceTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </x-app-layout>
 <x-footer />
